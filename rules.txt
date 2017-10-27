@@ -1,2 +1,3 @@
 push and test on dev branch.
 merge stable states to master branch.
+use .git/hooks/pre-commit for tracking DB schema/full-dump .
