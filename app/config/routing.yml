@@ -1,0 +1,10 @@
+swdt_user:
+    resource: "@swdtUserBundle/Resources/config/routing.yml"
+    prefix:   /
+swdt_karyab:
+    resource: "@swdtKaryabBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gregwar_captcha_routing:
+    resource: "@GregwarCaptchaBundle/Resources/config/routing/routing.yml"
+    prefix: /_gcb

@@ -1,0 +1,29 @@
+swdt\KaryabBundle\Entity\UserSkill:
+    type: entity
+    table: swdt_users_skills
+    repositoryClass: swdt\KaryabBundle\Repository\UserSkillRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        level:
+            type: integer
+    manyToOne:
+      user:
+          targetEntity: swdt\UserBundle\Entity\User
+          inversedBy: skills
+          joinColumn:
+            name: user_id
+            referencedColumnName: id
+          cascade: [persist]
+      tag:
+          targetEntity: swdt\KaryabBundle\Entity\SkillTag
+          inversedBy: skills
+          joinColumn:
+            name: tag_id
+            referencedColumnName: id
+          cascade: [persist]
+    lifecycleCallbacks: {  }

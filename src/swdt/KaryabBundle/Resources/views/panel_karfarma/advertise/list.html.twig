@@ -1,0 +1,145 @@
+{% extends '@swdtUser/layoutKarfarma.html.twig' %}
+{% block user_content %}
+    <div class="container-fluid advertise-parent">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="container-fluid col-md-9 advertise">
+
+
+
+                {#ahmadreza in ghesmato ok kon#}
+                {#ahmadreza : ok#}
+                {%  if total == 0 %}
+                    <span style="color: white;direction: rtl;float: right">شما آگهی ثبت شده ای ندارید!
+                {% endif %}
+
+
+
+
+                <div class="col-xs-12">
+                </div>
+                <div class="panel-group" id="accordion">
+                    {% set i=0 %}
+                    {% for ad in ads %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row advertise-title">
+                                    <div class="col-xs-12 col-sm-6" style="float: right;margin-bottom: 5px"><h4 style="font-family: IRANSansWeb_Medium,monospace;color: #e53935;">{{ ad.title }}</h4></div>
+                                    <div class="col-sm-2 col-md-1" style="float: right"></div>
+                                    <div class="col-xs-12 col-sm-4 col-md-5" style="float: right"><h5 style="font-family: IRANSansWeb_Medium,monospace;color: #e53935;">نمایش آگهی تا تاریخ : {{ ad.expireDate|jdate }}</h5></div>
+                                </div>
+                                <div class="row advertise-content">
+                                    {% if ad.isPublished %}
+                                        <div class="col-xs-3 col-sm-2" style="padding-left: 0">
+                                        <button type="button" style="background-color:#EDE574;" class="karyab-btn" data-toggle="modal" data-target="#myModal{{ad.id}}">غیر فعال سازی</button>
+                                        <div class="modal fade" id="myModal{{ad.id}}" role="dialog">
+                                            <div class="modal-dialog modal-xs">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <p>آیا مطمئن هستید؟</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 17px">خیر</button>
+                                                        <a class="btn btn-default" data-parent="#accordion" href="{{ path('swdt_karyab_advertise_disable',{'id': ad.id}) }}">بله</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                        <div class="col-xs-3 col-sm-2" style="padding-left: 0">
+                                            <button type="button" style="background-color:#C7F464;" class="karyab-btn" data-toggle="modal" data-target="#myModale{{ad.id}}">فعال سازی</button>
+                                            <div class="modal fade" id="myModale{{ad.id}}" role="dialog">
+                                                <div class="modal-dialog modal-xs">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <p>آیا مطمئن هستید؟</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 17px">خیر</button>
+                                                            <a class="btn btn-default" data-parent="#accordion" href="{{ path('swdt_karyab_advertise_enable',{'id': ad.id}) }}">بله</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <div class="col-xs-2 col-sm-1">
+                                        <button type="button" style="background-color:#FF6B6B;" class="karyab-btn" data-toggle="modal" data-target="#myModales{{ad.id}}">
+                                            <span class="fa fa-trash" style="font-size: 20px;line-height: 1.5"></span></button>
+                                        <div class="modal fade" id="myModales{{ad.id}}" role="dialog">
+                                            <div class="modal-dialog modal-xs">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <p>آیا مطمئن هستید؟</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 17px">خیر</button>
+                                                        <a class="btn btn-default" data-parent="#accordion" href="{{ path('swdt_karyab_advertise_delete',{'id': ad.id}) }}">بله</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-1">
+                                        <a href="{{ path('swdt_karyab_advertise_edit',{'id': ad.id}) }}" style="display: block">
+                                            <button type="button" style="background-color:#4ECDC4;" class="karyab-btn">
+                                                    <span class="fa fa-pencil" style="font-size: 20px;line-height: 1.5"></span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-2" style="color: #212121;text-align: right;line-height: 40px;height: 40px;"><h5 style="font-family: IRANSansWeb_Medium,monospace;color: #e53935;direction: rtl;">تعداد کارجو :</h5></div>
+                                    <div class="col-xs-2 col-sm-1">
+                                        <button type="button" style="background-color:#C7F464;font-size: 20px;" class="karyab-btn" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{ i }}">{{ ad.jobRequests.count }}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse{{ i }}" class="panel-collapse collapse {% if i==0 %}in{% endif %}">
+                                <div class="panel-body">
+                                    <h5>
+                                        شرح موقعیت شغلی :
+                                    </h5>
+                                    <p style="text-align: justify;font-family: IRANSansWeb,monospace" class="container-fluid">
+                                        {{ ad.description }}
+                                    </p>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-xs">
+                                            <thead>
+                                            <tr>
+                                                <th>نام و نام خانوادگی</th>
+                                                <th>شماره موبایل</th>
+                                                <th>حداقل حقوق درخواستی (در ساعت)</th>
+                                                <th>سال تولد</th>
+                                                <th>جنسیت</th>
+                                                <th>وضعیت سربازی</th>
+                                                <th>رزومه</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for req in ad.jobRequests %}
+                                                    <tr>
+                                                        <td>{{ req.user.fname }} {{ req.user.lname }}</td>
+                                                        <td>{{ req.user.mobile   }}</td>
+                                                        <td>{{ req.minimumSalary   }} تومان</td>
+                                                        <td>متولد {{ req.user.birthYear }}</td>
+                                                        <td>{{ req.user.genderText }}</td>
+                                                        <td>{{ req.user.karjoo.soldieryText }}</td>
+                                                        <td><a target="_blank" class="btn btn-info" href="{{ path('swdt_karyab_profile_karjoo',{'id': req.user.id,'rId': req.id}) }}">پروفایل و رزومه</a></td>
+                                                    </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% set i=i+1 %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,78 @@
+{% extends "@swdtUser/layout.html.twig" %}
+
+{% block user_content %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('swdt_template/NewCss.css') }}">
+    <div class="container-fluid show-karfarma-parent">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="container-fluid col-md-8 show-karfarma">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <img src="{{ user.karfarma.avatarWeb }}" class="img-rounded" id="company_logo" alt="" style="width: 100px;height: 100px;background-color:#fff">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">نام شرکت : </label><br>
+                            <label>{{ user.karfarma.companyName }}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">زمینه کاری : </label><br>
+                            <label>{{ user.karfarma.companyField }}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">تلفن شرکت : </label><br>
+                            <label>{{ user.karfarma.telephone }}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">ایمیل شرکت : </label><br>
+                            <label>{{ user.karfarma.companyEmail }}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">درباره شرکت [سال تاسیس ، اهداف و ...]</label><br>
+                            <label>{{ user.karfarma.about }}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">آدرس شرکت : </label><br>
+                            <label>{{ user.karfarma.address }}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">وبسایت : </label><br>
+                            <label><a href="http://{{ user.karfarma.website }}">{{ user.karfarma.website }}</a></label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">فایل توضیحات شرکت : </label><br>
+                            {% if user.karfarma.aboutPic %}
+                                <a href="{{ user.karfarma.aboutPicWeb }}">مشاهده</a>
+                            {% else %}
+                                <label>فاقد فایل</label>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+{% endblock user_content %}

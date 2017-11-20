@@ -1,0 +1,15 @@
+{% extends '@swdtKaryab/Email/layout.html.twig' %}
+{% block content %}
+
+<h3 style="direction: rtl;">کاربر عزیز,</h3>
+
+<p style="direction: rtl;">
+درخواست جدیدی برای آگهی <b>{{ ad }}</b> از طرف <b>{{ name }}</b> برای شما ارسال شده است.
+    <br>
+    لطفا جهت بررسی رزومه این عضو کاریاب به صفحه آگهی مراجعه کنید.
+</p>
+
+<p class="callout" style="text-align: center">
+    <a href="{{ path('karyab_karfarma_advertise_index') }}">صفحه آگهی های شما</a>
+</p>
+{% endblock content %}

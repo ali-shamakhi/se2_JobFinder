@@ -1,0 +1,152 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "@swdtUser/layout.html.twig" %}
+
+{% block user_content %}
+    <script src='https://www.google.com/recaptcha/api.js?hl=fa'></script>
+    <script src="{{ asset('swdt_template/js/flowtype.js') }}"></script>
+    <div class="container-fluid register-karfarma-parent">
+        <div class="row">
+            <div class="col-md-1 col-lg-2"></div>
+            <div class="container-fluid col-md-10 col-lg-8 register-karfarma">
+                <h1 style="text-align: center;margin-bottom: 45px">عضویت در سامانه کاریاب به عنوان کارفرما</h1>
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register_karfarma')}) }}
+                {% if form.vars.errors %}
+                    <div class="errorBox">{{ form_errors(form) }}</div>
+                {% endif %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <h3>اطلاعات نماینده کارفرما</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="first_name" class="title-label">*نام</label>
+                            {{ form_widget(form.fName,{attr: {'class':'form-control'}}) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="last_name" class="title-label">*نام خانوادگی</label>
+                            {{ form_widget(form.lName,{attr: {'class':'form-control'}}) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="phone" class="title-label">شماره تماس ثبت نام کننده</label>
+                            {{ form_widget(form.karfarma.telephone,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.karfarma.telephone) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="mail" class="title-label">*پست الکترونیک ثبت نام کننده</label>
+                            {{ form_widget(form.email,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <h3>اطلاعات حساب</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="user_name" class="title-label">*شناسه کاربری</label>
+                            {{ form_widget(form.username,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.username) }}
+                        </div>
+                        {% for f in form.plainPassword %}
+                            <div class="col-sm-12">
+                                <label for="username" class="title-label">*{{ form_label(f) }}</label>
+                                {{ form_widget(f,{attr: {'class': 'form-control'}}) }}
+                                {{ form_errors(f) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <h3>اطلاعات کارفرما (شرکت)</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="company_name" class="title-label">*نام کارفرما</label>
+                            {{ form_widget(form.karfarma.company_name,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.karfarma.company_name) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="object" class="title-label">*زمینه کاری</label>
+                            {{ form_widget(form.karfarma.company_field,{attr: {'class':'form-control'}}) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="phone_number" class="title-label">*تلفن کارفرما</label>
+                            {{ form_widget(form.mobile,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.mobile) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="email" class="title-label">*ایمیل کارفرما</label>
+                            {{ form_widget(form.karfarma.company_email,{attr: {'class':'form-control'}}) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="about" class="title-label">درباره کارفرما (سال تاسیس ، اهداف و...)</label>
+                            {{ form_widget(form.karfarma.about,{attr: {'class':'form-control','style':'height:93px'}}) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="address" class="title-label">*آدرس کارفرما</label>
+                            {{ form_widget(form.karfarma.address,{attr: {'class':'form-control'}}) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="website" class="title-label">وبسایت</label>
+                            {{ form_widget(form.karfarma.website,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.karfarma.website) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="#" class="title-label">شرایط و ضوابط سامانه کاریاب</label>
+                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">سایت کاریاب صرفا به عنوان محل اتصال کارفرمایان و کارجویان عمل می کند و به کارفرمایان اجازه می دهد پروژه ها و شغل های خود را  به صورت آگهی ثبت کنند . سایت کاریاب همچنین امکان مشاهده آگهی های مرتبط و درخواست همکاری برای یک آگهی را برای کارجویان فراهم آورده است . وبسایت کاریاب خود را درگیر جزئیات فرصت های شغلی نمی کند. بنابراین سایت کاریاب هیچ گونه مسئولیتی در قبال آگهی های ارسال شده و همچنین کارآمد بودن کارجو ها با توجه به اطلاعات وارده از جانب آن ها ندارد و تضمینی بابت رعایت موارد بالا از جانب کارفرمایان و کارجویان نمیدهد .
+                            </textarea>
+                        </div>
+                        <div class="col-sm-12" style="direction: ltr;text-align: right">
+                            <div class="checkbox">
+                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه کاریاب را به طور کامل مطالعه کرده و قبول دارم</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <label class="title-label">سوال امنیتی</label>
+                            <div class="g-recaptcha" data-sitekey="6LcxKwkUAAAAALKxy9mDPS9D1wZXJAh_8P9yGHJs" data-theme="clean"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin: 40px 0">
+                    <div class="col-sm-12" style="text-align: center">
+                        <button id="checkedButton" disabled type="submit" style="padding:8px 55px;" class="btn btn-success">ثبت نام</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+            <div class="col-md-1 col-lg-2"></div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var temp = $("#checkedButton");
+            $("#condition").change(function () {
+                if($(this).prop("checked") == true){
+                    temp.removeAttr("disabled");
+                }
+                else if($(this).prop("checked") == false){
+                    temp.attr("disabled","disabled");
+                }
+            });
+        });
+    </script>
+    <script>
+        $('body').flowtype({
+            minimum   : 310,
+            maximum   : 3900,
+            minFont   : 12,
+            maxFont   : 30,
+            fontRatio : 100
+        });
+        $('h1').flowtype({
+            minimum   : 310,
+            maximum   : 3900,
+            minFont   : 14,
+            maxFont   : 50,
+            fontRatio : 19
+        });
+        $('h3').flowtype({
+            minimum   : 310,
+            maximum   : 3900,
+            minFont   : 10,
+            maxFont   : 45,
+            fontRatio : 23
+        });
+    </script>
+{% endblock user_content %}

@@ -1,0 +1,80 @@
+{% extends "@swdtUser/layout.html.twig" %}
+
+{% block user_content %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('swdt_template/NewCss.css') }}">
+    <div class="container-fluid show-karjoo-parent">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="container-fluid col-md-8 show-karjoo">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <img src="{{ user.karjoo.avatarWeb }}" class="img-rounded" id="company_logo" alt="Cinque Terre" style="width: 100px;height: 100px;background-color:#fff">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">نام و نام خانوادگی : </label><br>
+                            <label>{{ user.fName }} {{ user.lName }}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">آخرین مدرک تحصیلی : </label><br>
+                            <label>{{ user.karjoo.gradeText }}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">سایر مهارت ها : </label>
+                            <label>{{ user.karjoo.about }}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">وضعیت سربازی : </label><br>
+                            <label>{{ user.karjoo.soldieryText }}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 50px">
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">وبسایت : </label><br>
+                            <label><a href="http://{{ user.karjoo.website }}">{{ user.karjoo.website }}</a></label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">رزومه : </label><br>
+                            {% if user.karjoo.resume is not null %}
+                            <label><a href="{{ user.karjoo.resumeWeb }}">رزومه کنونی</a><br></label>
+                            {% else %}
+                                <label>فاقد رزومه</label>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label class="title">مهارت ها : </label><br>
+                            {% for skill in user.skills %}
+                                <div class="tags">
+                                    <label><span>{{ skill.tag }}</span>
+                                        {% for i in 1..skill.level %}
+                                            <i class="fa fa-star fa-fw"></i>
+                                        {% endfor %}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+{% endblock user_content %}

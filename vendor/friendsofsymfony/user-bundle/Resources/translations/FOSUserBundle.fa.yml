@@ -1,0 +1,67 @@
+group:
+    edit:
+        submit: 'بهنگام سازی'
+    show:
+        name: 'نام گروه'
+    new:
+        submit: 'ایجاد گروه'
+    flash:
+        updated: 'گروه بهنگام شده است'
+        created: 'گروه ساخته شده است'
+        deleted: 'گروه حذف شده است'
+security:
+    login:
+        username: 'نام کاربری'
+        password: 'رمز عبور'
+        remember_me: 'مرا به یاد بسپار'
+        submit: ورود
+profile:
+    show:
+        username: 'نام کاربری'
+        email: ایمیل
+    edit:
+        submit: 'بهنگام سازی'
+    flash:
+        updated: 'نمایه بهنگام شده است'
+change_password:
+    submit: 'تغییر رمز عبور'
+    flash:
+        success: 'رمز عبور تغییر کرده است'
+registration:
+    check_email: 'ایمیلی به %email% فرستاده شده است. این ایمیل دارای پیوندی است که برای فعال سازی باید روی آن کلیک کنید.'
+    confirmed: '%username% تبریک, کاربری شما اکنون فعال شده است.'
+    back: 'برگشت به صفحه اصلی.'
+    submit: 'ثبت نام'
+    flash:
+        user_created: 'کاربر با موفقیت ساخته شده است'
+    email:
+        subject: '%username% خوش آمدید!'
+        message: "%username% سلام!\n\nبرای تکمیل فعال سازی کاربری خود - لطفا %confirmationUrl% را مشاهده کنید\n\nبا احترام،\nتیم.\n"
+resetting:
+    password_already_requested: 'رمز عبور برای این کاربر هم اکنون طی ۲۴ ساعت گذشته درخواست شده است.'
+    check_email: 'ایمیلی به %email% فرستاده شده است. این ایمیل دارای پیوندی است که برای بازنشانی رمز عبور باید روی آن کلیک کنید.'
+    request:
+        invalid_username: 'نام کاربری یا ایمیل "%username%" موجود نیست.'
+        username: 'نام کاربری یا ایمیل'
+        submit: 'بازیابی رمز عبور'
+    reset:
+        submit: 'تغییر رمز عبور'
+    flash:
+        success: 'کلمه عبور با موفقیت بازیابی شده است'
+    email:
+        subject: 'بازیابی رمز عبور'
+        message: "%username% سلام!\n\nبرای بازیابی رمز عبور خود - لطفا %confirmationUrl% را مشاهده کنید\n\nبا احترام،\nتیم.\n"
+layout:
+    logout: خروج
+    login: ورود
+    register: 'ثبت نام'
+    logged_in_as: 'وارد شده با %username%'
+form:
+    group_name: 'نام گروه'
+    username: 'نام کاربری'
+    email: ایمیل
+    current_password: 'رمز عبور کنونی'
+    password: 'رمز عبور'
+    password_confirmation: 'تایید رمز عبور'
+    new_password: 'رمز عبور جدید'
+    new_password_confirmation: 'تایید رمز عبور جدید'

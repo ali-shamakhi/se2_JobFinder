@@ -1,0 +1,499 @@
+<?xml version="1.0" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="FOS\UserBundle\Model\User">
+
+
+        <property name="email">
+
+            <constraint name="NotBlank">
+                <option name="message">fos_user.email.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="minMessage">fos_user.email.short</option>
+                <option name="max">254</option>
+                <option name="maxMessage">fos_user.email.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Email">
+                <option name="message">fos_user.email.invalid</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="password">
+            <constraint name="NotBlank">
+                <option name="message">fos_user.password.blank</option>
+                <option name="groups">
+                    <value>ResetPassword</value>
+                    <value>ChangePassword</value>
+                </option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">6</option>
+                <option name="max">15</option>
+                <option name="minMessage">fos_user.password.short</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>ChangePassword</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="plainPassword">
+            <!--<constraint name="NotBlank">-->
+            <!--<option name="message">fos_user.password.blank</option>-->
+            <!--<option name="groups">-->
+            <!--<value>Registration</value>-->
+            <!--<value>ResetPassword</value>-->
+            <!--<value>ChangePassword</value>-->
+            <!--</option>-->
+            <!--</constraint>-->
+            <constraint name="Length">
+                <option name="min">6</option>
+                <option name="max">4096</option>
+                <option name="minMessage">کلمه عبور حداقل 6 رقمی باشد</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                    <value>ResetPassword</value>
+                    <value>ChangePassword</value>
+                </option>
+            </constraint>
+        </property>
+
+
+    </class>
+
+    <class name="FOS\UserBundle\Model\Group">
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">fos_user.group.blank</option>
+                <option name="groups">Registration</option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="minMessage">fos_user.group.short</option>
+                <option name="max">255</option>
+                <option name="maxMessage">fos_user.group.long</option>
+                <option name="groups">Registration</option>
+            </constraint>
+        </property>
+    </class>
+
+    <!-- Propel classes. This should stay in sync with the Model classes -->
+
+    <class name="FOS\UserBundle\Propel\User">
+
+        <property name="username">
+            <constraint name="NotBlank">
+                <option name="message">fos_user.username.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="minMessage">fos_user.username.short</option>
+                <option name="max">255</option>
+                <option name="maxMessage">fos_user.username.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="email">
+            <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
+                <option name="message">fos_user.email.already_used</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="NotBlank">
+                <option name="message">fos_user.email.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="minMessage">fos_user.email.short</option>
+                <option name="max">255</option>
+                <option name="maxMessage">fos_user.email.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Email">
+                <option name="message">fos_user.email.invalid</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="plainPassword">
+            <constraint name="NotBlank">
+                <option name="message">fos_user.password.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>ResetPassword</value>
+                    <value>ChangePassword</value>
+                </option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="max">4096</option>
+                <option name="minMessage">fos_user.password.short</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                    <value>ResetPassword</value>
+                    <value>ChangePassword</value>
+                </option>
+            </constraint>
+        </property>
+    </class>
+
+    <class name="FOS\UserBundle\Propel\Group">
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">fos_user.group.blank</option>
+                <option name="groups">Registration</option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="minMessage">fos_user.group.short</option>
+                <option name="max">255</option>
+                <option name="maxMessage">fos_user.group.long</option>
+                <option name="groups">Registration</option>
+            </constraint>
+        </property>
+    </class>
+
+    <class name="swdt\UserBundle\Entity\User">
+
+        <property name="fName">
+
+            <constraint name="NotBlank">
+                <option name="message">لطفا نام خود را وارد کنید</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="lName">
+
+            <constraint name="NotBlank">
+                <option name="message">لطفا نام خانوادگی خود را وارد کنید</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+      <!--  <property name="birthYear">
+
+            <constraint name="NotBlank">
+                <option name="message">لطفا سال تولد خود را وارد کنید</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>-->
+
+        <property name="mobile">
+
+            <constraint name="NotBlank">
+                <option name="message">لطفا شماره تماس را وارد کنید</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+
+            <constraint name="Type">
+                <option name="type">numeric</option>
+                <option name="message">تلفن همراه نا معتبر است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+
+
+            <constraint name="Length">
+                <option name="max">12</option>
+                <option name="exactMessage">تلفن همراه وارد شده نامعتبر است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="skills">
+            <constraint name="Count">
+                <option name="min">1</option>
+                <option name="minMessage">ورود حداقل یک مهارت الزامی است</option>
+                <option name="groups">
+                    <value>karjooSkill</value>
+                </option>
+            </constraint>
+        </property>
+
+
+    </class>
+
+    <class name="swdt\UserBundle\Entity\Karjoo">
+
+    <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
+        <option name="fields">nationalId</option>
+        <option name="message">کد ملی نمیتواند تکراری باشد</option>
+    </constraint>
+
+    <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
+        <option name="fields">studentId</option>
+        <option name="message">شماره دانشجویی نمیتواند تکراری باشد</option>
+    </constraint>
+
+        <property name="nationalId">
+
+            <constraint name="NotBlank">
+                <option name="message">لطفا کد ملی را وارد کنید</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+
+            <constraint name="Type">
+                <option name="type">numeric</option>
+                <option name="message">کد ملی نامعتبر است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+
+            <constraint name="Length">
+                <option name="min">10</option>
+                <option name="max">10</option>
+                <option name="exactMessage">کد ملی 10 رقمی را وارد کنید</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="studentId">
+
+            <constraint name="Type">
+                <option name="type">numeric</option>
+                <option name="message">شماره دانشجویی نامعتبر است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+
+            <constraint name="Length">
+                <option name="min">8</option>
+                <option name="max">8</option>
+                <option name="exactMessage">شماره دانشجویی باید 8 رقم داشته باشد</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="file">
+            <constraint name="Image">
+                <option name="maxSize">5M</option>
+                <option name="mimeTypes">
+                    <value>image/jpg</value>
+                    <value>image/jpeg</value>
+                    <value>image/png</value>
+                </option>
+                <option name="mimeTypesMessage">لطفا فرمت مناسبی را برای عکس انتخاب کنید</option>
+                <option name="maxSizeMessage">سایز عکس بیش از ۵ مگابایت است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="resumeFile">
+            <constraint name="File">
+                <option name="maxSize">5M</option>
+                <option name="mimeTypes">
+                    <value>application/pdf</value>
+                </option>
+                <option name="mimeTypesMessage">لطفا فرمت pdf را برای رزومه انتخاب کنید</option>
+                <option name="maxSizeMessage">سایز رزومه بیش از ۵ مگابایت است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+    </class>
+
+    <class name="swdt\UserBundle\Entity\Karfarma">
+
+        <!--<constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">-->
+            <!--<option name="fields">nationalId</option>-->
+            <!--<option name="message">کد ملی نمیتواند تکراری باشد</option>-->
+        <!--</constraint>-->
+
+        <!--<property name="nationalId">-->
+
+            <!--<constraint name="NotBlank">-->
+                <!--<option name="message">لطفا کد ملی را وارد کنید</option>-->
+                <!--<option name="groups">-->
+                    <!--<value>Registration</value>-->
+                    <!--<value>Profile</value>-->
+                <!--</option>-->
+            <!--</constraint>-->
+
+
+            <!--<constraint name="Type">-->
+                <!--<option name="type">numeric</option>-->
+                <!--<option name="message">کد ملی نامعتبر است</option>-->
+                <!--<option name="groups">-->
+                    <!--<value>Registration</value>-->
+                    <!--<value>Profile</value>-->
+                <!--</option>-->
+            <!--</constraint>-->
+            <!--<constraint name="Length">-->
+                <!--<option name="min">10</option>-->
+                <!--<option name="max">10</option>-->
+                <!--<option name="exactMessage">کد ملی 10 رقمی را وارد کنید</option>-->
+                <!--<option name="groups">-->
+                    <!--<value>Registration</value>-->
+                    <!--<value>Profile</value>-->
+                <!--</option>-->
+            <!--</constraint>-->
+        <!--</property>-->
+
+        <property name="file">
+            <constraint name="Image">
+                <option name="maxSize">5M</option>
+                <option name="mimeTypes">
+                    <value>image/jpg</value>
+                    <value>image/jpeg</value>
+                    <value>image/png</value>
+                </option>
+                <option name="mimeTypesMessage">لطفا فرمت مناسبی را برای عکس انتخاب کنید</option>
+                <option name="maxSizeMessage">سایز عکس بیش از ۵ مگابایت است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="aboutPicFile">
+            <constraint name="File">
+                <option name="maxSize">5M</option>
+                <option name="mimeTypes">
+                    <value>image/jpg</value>
+                    <value>image/jpeg</value>
+                    <value>image/png</value>
+                    <value>application/pdf</value>
+                </option>
+                <option name="mimeTypesMessage">لطفا فرمت مناسبی را برای این فایل انتخاب کنید</option>
+                <option name="maxSizeMessage">سایز فایل بیش از ۵ مگابایت است</option>
+            </constraint>
+        </property>
+
+        <property name="telephone">
+            <constraint name="Type">
+                <option name="type">numeric</option>
+                <option name="message">شماره تلفن نامعتبر است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Length">
+                <option name="max">12</option>
+                <option name="exactMessage">شماره تلفن وارد شده نامعتبر است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="companyEmail">
+
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="minMessage">fos_user.email.short</option>
+                <option name="max">254</option>
+                <option name="maxMessage">fos_user.email.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Email">
+                <option name="message">fos_user.email.invalid</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+
+        </property>
+    </class>
+
+    <class name="swdt\KaryabBundle\Entity\UserSkill">
+
+        <property name="level">
+            <constraint name="Range">
+                <option name="min">1</option>
+                <option name="max">5</option>
+                <option name="minMessage">حداقل میزان مهارت ۱ است</option>
+                <option name="maxMessage">حداکثر میزان مهارت ۵ است</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+    </class>
+
+
+
+</constraint-mapping>

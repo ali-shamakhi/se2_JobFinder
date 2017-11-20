@@ -1,0 +1,183 @@
+{% extends '@swdtUser/layoutKarjoo.html.twig' %}
+{% block user_content %}
+    <div class="container-fluid advertise-parent">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="container-fluid col-md-9 karjoo-advertise">
+                <div class="container-fluid" style="margin-bottom: 5px">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <span style="color: white">نتایج یافت شده مرتبط با شما: {{ total }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion">
+                    {% set i=0 %}
+                    {% for ad in ads %}
+                        <div class="panel panel-default" style="border-radius:2px 0 0 2px;border-right: 5px solid #e53935">
+                            <div class="container-fluid" style="box-shadow: 0 1px 0 gray">
+                                <div class="row" style="margin-bottom: 10px">
+                                    <div class="col-xs-12">
+                                        <h4 style="font-family: IRANSansWeb_Medium,monospace;color: #e53935">{{ ad.title }}</h4>
+                                    </div>
+                                    <div class="col-xs-7" style="float: right">
+                                        <i class="fa fa-laptop" aria-hidden="true"></i>
+                                        <span>{{ ad.user.karfarma.companyName }}</span>
+                                    </div>
+                                    <div class="col-xs-7" style="float: right">
+                                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                        <span>قرارداد : {{ ad.coOperationText }}</span>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-bottom: 10px">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-xs-12 col-sm-4">
+                                        <label style="width: 100%" id="my_button{{ ad.id }}" class="btn btn-info" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{ ad.id }}">{% if i==0 %}بستن آگهی{% else %}مشاهده آگهی{% endif %}</label>
+                                    </div>
+                                    <div class="col-sm-4"></div>
+                                </div>
+                            </div>
+                            <div id="collapse{{ ad.id }}" class="panel-collapse collapse {% if i==0 %}in{% endif %}">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <span class="advertise-detail">{{ ad.gradeText }}</span>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                            <span>حداقل میزان تحصیلات : </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <span class="advertise-detail">{{ ad.genderText }}</span>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                            <span>جنسیت : </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <span class="advertise-detail">{{ ad.soldieryText }}</span>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                                            <span>وضعیت سربازی : </span>
+                                        </div>
+                                    </div>
+                                    {% if ad.brochure is not null %}
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <a class="advertise-detail" href="{{ ad.brochureWeb }}">مشاهده</a>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                                <span>توضیحات آگهی(فایل): </span>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <span class="advertise-detail">{{ ad.skillTags|join(' , ') }}</span>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+                                            <span> مهارت ها : </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2 col-lg-3"></div>
+                                        <div class="col-xs-6 col-sm-4 col-lg-3">
+                                            <span><input placeholder="تومان در ساعت" type="text" class="form-control" id="minSalary_{{ ad.id }}"></span>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <i class="fa fa-money" aria-hidden="true"></i>
+                                            <span>حقوق درخواستی : </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <span class="advertise-detail">{{ ad.otherSkills }}</span>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <i class="fa fa-asterisk" aria-hidden="true"></i>
+                                            <span>سایر مهارت ها : </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                            <span>شرح شغل و آگهی ارسالی : </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12" style="text-align: justify">
+                                            <span class="advertise-detail">{{ ad.description }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" style="margin-bottom: 10px">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            {% set flag=0 %}
+                                            {% for f in app.user.jobRequests %}
+                                                {% if f.advertise==ad %}
+                                                    {% set flag=1 %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if flag==1 %}
+                                                <button class="btn btn-error btn-file" style="background: #ccc;border-bottom: 4px solid #95a5a6;">
+                                                    قبلا درخواست داده شده
+                                                </button>
+                                            {% else %}
+                                                {% if resume %}
+                                                    <button data-id="{{ ad.id }}" class="sendRequest btn btn-success btn-file">
+                                                        ارسال رزومه...
+                                                    </button>
+                                                {% else %}
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal_resume{{ ad.id }}">ارسال رزومه ...</button>
+                                                    <div class="modal fade" id="myModal_resume{{ ad.id }}" role="dialog">
+                                                        <div class="modal-dialog modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body" style="text-align: right;">
+                                                                    <p>لطفا برای انتخاب این موقعیت شغلی ، ابتدا از طریق منوی پروفایل ، رزومه خود را آپلود نمایید.</p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">بستن</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <a target="_blank" href="{{ path('swdt_karyab_profile_karfarma',{'id':ad.user.id,'name':ad.user.karfarma.companyName|replace(' ','-')}) }}"><label id="my_button3" class="btn btn-danger">پروفایل شرکت</label></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% set i=i+1 %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    <script>
+        var temp = null;
+        $(".panel-default .btn-info").click(function () {
+            null != temp && $(temp).html("مشاهده آگهی");
+            var a = this;
+            "block" == $($(a).context.attributes[5].value).css("display") ? $(a).html("مشاهده آگهی") : "none" == $($(a).context.attributes[5].value).css("display") && $(a).html("بستن آگهی"), temp = a
+        }), $(".sendRequest").click(function () {
+            $(this).html("صبر کنید..."), that = $(this), id = $(this).data("id"), $.ajax({method: "POST", data: "id=" + id + "&minSalary=" + $("#minSalary_" + id).val(), url: "{{ path('mz_ajax_advertise_request') }}", success: function (a) {
+                1 == a ? (that.html("انجام شد!")) : 2 == a ? that.html("این درخواست قبلا ثبت شده است") : 3 == a ? (alert("لطفا حقوق درخواستی را وارد کنید"), that.html("ارسال رزومه...")) : (that.html("ارسال رزومه..."), alert("خطایی رخ داده لطفا بعدا تلاش کنید"))
+            }})
+        });
+    </script>
+{% endblock %}

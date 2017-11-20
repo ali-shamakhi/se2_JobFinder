@@ -1,0 +1,16 @@
+{% extends '@swdtUser/layout.html.twig' %}
+{% block user_content %}
+
+    <link rel="stylesheet" href="{{ asset('swdt_template/NewCss.css') }}">
+    <div class="col-md-12 checkEmail">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div>
+                    ایمیلی به {{ email }} فرستاده شده است. این ایمیل دارای پیوندی است که برای بازنشانی کلمه عبور باید روی آن کلیک کنید.
+
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,145 @@
+@font-face {
+    font-family: IRANSansWeb;
+    src: url(Font/IRANSansWeb.ttf);
+}
+@font-face {
+    font-family: IRANSansWeb_Medium;
+    src: url(Font/IRANSansWeb_Medium.ttf);
+}
+@font-face {
+    font-family: IRANSansWeb_Light;
+    src: url(Font/IRANSansWeb_Light.ttf);
+}
+@font-face {
+    font-family: IRANSansWeb_UltraLight;
+    src: url(Font/IRANSansWeb_UltraLight.ttf);
+}
+@font-face {
+    font-family: Yekan;
+    src: url(Font/Yekan.ttf);
+}
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+    color: #bac5ff;
+    background-color:RGBA(0, 0, 0, 0.20);
+}
+html, body {
+
+    font-family: IRANSansWeb_Medium,monospace;
+}
+
+#site {
+    width: 100%;
+}
+
+#section-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+div.section {
+    width: 100%;
+    position: relative;
+}
+
+
+.watermark{
+    position: absolute;
+    width: 100%;
+    top: 15%;
+    z-index: 30;
+
+}
+
+#star3::after {
+    background-color: #E15252;
+    color: #fff;
+}
+
+#star2::after {
+    background-color: #52C8E1;
+    color: #fff;
+}
+
+#star1::after {
+    background-color: #E1B252;
+    color: #fff;
+}
+
+hr.star-light::after, hr.star-primary::after {
+    content: "\f005";
+    font-family: FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    font-size: 2em;
+    padding: 0 .25em;
+}
+hr.star-light {
+    border-color: #fff;
+}
+hr.star-light, hr.star-primary {
+    padding: 0;
+    border: none;
+    border: 2px solid #fff;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+}
+.IconBox {
+    font-size: 40pt;
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    padding: 18px;
+    border-radius: 100%;
+    color: #e1b252;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+.Why {
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+.WhyTextBox{
+font-size: 16pt;
+    padding: 7px;
+    direction: rtl;
+    border-radius: 5px;
+    margin-top: 15px;
+
+
+}
+
+
+.social > ul >li {
+    text-decoration: none;
+    font-size: 25px;
+    list-style-type: none;
+    display: inline-block;
+}
+.social > ul {
+    padding:0px;
+}
+.test {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgb(221, 221, 221);
+    padding: 10px;
+    border-top: 5px solid #B2F888;
+    margin-bottom: 10px;
+}
+.test2 {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgb(221, 221, 221);
+    padding: 10px;
+    border-top: 5px solid #51EDFF;
+    margin-bottom: 10px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+
+}

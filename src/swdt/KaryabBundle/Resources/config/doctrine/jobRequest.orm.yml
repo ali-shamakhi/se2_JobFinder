@@ -1,0 +1,29 @@
+swdt\KaryabBundle\Entity\jobRequest:
+    type: entity
+    table: null
+    repositoryClass: swdt\KaryabBundle\Repository\jobRequestRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            type: datetime
+        minimumSalary:
+            type: integer
+    manyToOne:
+        user:
+          targetEntity: swdt\UserBundle\Entity\User
+          inversedBy: jobRequests
+          joinColumn:
+            name: user_id
+            referencedColumnName: id
+        advertise:
+          targetEntity: swdt\KaryabBundle\Entity\Advertise
+          inversedBy: jobRequests
+          joinColumn:
+            name: advertise_id
+            referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,13 @@
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+        <div class="form_error" style="color:red;direction:rtl;padding:5px">
+            {% for error in errors %}
+<span class="fa fa-exclamation-triangle" style="margin-left:3px;"></span>
+<span style="color: #e23935">{{ error.message }}</span>
+                
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}

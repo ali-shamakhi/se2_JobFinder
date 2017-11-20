@@ -1,0 +1,103 @@
+{% extends '@swdtKaryab/base.html.twig' %}
+
+{% block karyabContent %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('swdt_template/css.css') }}">
+
+    {{ form_start(form, { 'action': path('swdt_karyab_contact_us') }) }}
+
+    {{ form_errors(form) }}
+
+    <!-- Start page header -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" style="text-align:center">
+                    <h3 style="margin:0px"> تماس با ما </h3>
+                </div>
+            </div>
+            <img src="{{ asset('swdt_template/img/divider_shadow.png') }}" title="" width="100%" alt="" />
+        </div>
+    </section>
+    <!-- End page header -->
+
+
+    <section class="contact" style="text-align:right;direction:rtl;margin-top:10px;margin-bottom:70px">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 our-office">
+                    <div class="test">
+                        <h4>ارتباط با ما</h4>
+                        <hr />
+                        {#<p>مراجعه در روز های کاری از ساعت 10 الی 14</p>#}
+                        <dl>
+                            <dt>آدرس:</dt>
+                            <dd>
+                                ولنجک ، بلوار دانشجو<br />
+                                دانشگاه شهید بهشتی ، دانشکده مهندسی و علوم کامپیوتر<br />
+                                طبقه سوم ، آزمایشگاه شبکه (تیم برنامه نویسی وب)
+                            </dd>
+                            {#<dt>تلفن تماس:</dt>#}
+                            {#<dd>#}
+                                {#09120853277#}
+                            {#</dd>#}
+                            <dt>ایمیل:</dt>
+                            <dd><a href="mailto:info@karyab.sbu.ac.ir">info@karyab.sbu.ac.ir</a></dd>
+
+                        </dl>
+                        <div style="width:100%px;overflow:hidden;height:175px;max-width:100%;"><div id="embed-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=دانشکده+برق+و+کامپیوتر+دانشگاه+شهید+بهشتی&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-map-code" href="https://www.hostingreviews.website/godaddy-review" id="authorize-map-data">godaddy review</a><style>#embed-map-display img{max-width:none!important;background:none!important;font-size: inherit;}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=d7ebb220-3a8c-27e6-d38b-7f9a2290abcd&c=google-map-code&u=1472332813" defer="defer" async="async"></script>
+                    </div>
+                </div>
+                <div class="col-sm-8 contact-form">
+                    <div class="test">
+                        <h4>ارسال پیام به ما</h4>
+                        <hr />
+                        <form>
+                            {% if fullName %}
+                                    <div class="form-group" >
+                                        {{ form_label(form.name) }}
+                                        {{ form_widget(form.name,{attr: {'class': 'form-control' , disabled:"disabled" , value:fullName }}) }}
+                                        {{ form_errors(form.name) }}
+                                    </div>
+                            {% else %}
+                                    <div class="form-group" >
+                                        {{ form_label(form.name) }}
+                                        {{ form_widget(form.name,{attr: {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.name) }}
+                                    </div>
+                            {% endif %}
+
+                            {% if UserEmail %}
+                                    <div class="form-group" >
+                                        {{ form_label(form.email) }}
+                                        {{ form_widget(form.email,{attr: {'class': 'form-control' , disabled:"disabled" , value:UserEmail}}) }}
+                                        {{ form_errors(form.email) }}
+                                    </div>
+                            {% else %}
+                                    <div class="form-group" >
+                                    {{ form_label(form.email) }}
+                                    {{ form_widget(form.email,{attr: {'class': 'form-control'}}) }}
+                                    {{ form_errors(form.email) }}
+                                    </div>
+                            {% endif %}
+                            <div class="form-group" >
+                                {{ form_label(form.subject) }}
+                                {{ form_widget(form.subject,{attr: {'class': 'form-control'}}) }}
+                                {{ form_errors(form.subject) }}
+                            </div>
+                            <div class="form-group" >
+                                {{ form_label(form.message) }}
+                                {{ form_widget(form.message,{attr: {'class': 'form-control'}}) }}
+                                {{ form_errors(form.message) }}
+                            </div>
+
+                            <button style="margin-top:0px;" type="submit" class="btn btn-success">ارسال پیام</button>
+                            {{ form_end(form) }}
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+{% endblock %}

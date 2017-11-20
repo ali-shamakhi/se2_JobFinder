@@ -1,0 +1,124 @@
+@font-face {
+    font-family: yekan;
+    src: url(Font/Yekan.ttf);
+}
+@media (min-width: 768px){
+    .nav_seprator{
+        border-left: 1px solid rgb(255,255,255);
+        border-right: 1px solid rgb(255,255,255)
+    }
+}
+
+.form-control {
+text-align:right;
+direction:rtl;
+}
+
+@media (max-width: 768px){
+    .seprator{
+        display: none;
+    }
+}
+
+#myNavbar{
+    font-family: yekan,Serif,monospace;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    color: #f0f5ff;
+}
+
+.navbar-nav > li > a{
+    padding-top: 15px;
+    line-height:1.5;
+}
+
+.container-fluid > span{
+    color: aliceblue;
+    display: inline-block;
+    float: right;
+}
+
+a {
+    color: #c0c0c0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-inverse .navbar-toggle {
+    border: none;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+    background-color: rgb(65, 33, 105);
+}
+
+.navbar-inverse .navbar-toggle:focus{
+    background-color: rgb(65, 33, 105);
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #F5F5F5;
+}
+
+.nav_seprator > li:hover{
+    background-color: rgb(65, 33, 105);
+}
+
+/*----------------------------------------------------------------------------------------------*/
+
+.my_footer{
+    background-color: #333333;
+    font-family: yekan,Serif,monospace;
+    padding-top: 13px;
+    padding-bottom: 10px;
+}
+
+.my_footer > ul{
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+}
+
+.my_footer > span{
+    direction: rtl;
+}
+
+.my_footer > ul > li{
+    display: inline-block;
+}
+
+.my_footer > ul > li > a{
+    text-decoration: inherit;
+    color: aliceblue
+}
+
+.my_footer > ul > li > a:hover{
+    color: crimson;
+}
+
+
+
+/*----------------------------------------------------------------------------------------------*/
+
+.row a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+form .error {
+    padding: 5px;
+    display:block;
+    font-weight: 100;
+    margin-top: 0.4em;
+    direction:rtl;
+    color: red;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>صفحه اصلی</title>
+    <script src="{{ asset('swdt_template/js/jquery.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('swdt_template/bootstrap.min.css') }}">
+    <script src="{{ asset('swdt_template/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('swdt_template/js/backgroundVideo.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('swdt_template/css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('swdt_template/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('swdt_template/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('swdt_template/NewCss1.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('swdt_template/NewCss.css') }}">
+    <style>
+        #change1 {
+            float: right;
+        }
+
+        @media screen and (max-width: 992px) {
+            #change1 {
+                float: none;
+            }
+        }
+        .close{
+            float: left;
+        }
+        .modal-content{
+            text-align: right;
+        }
+        .modal-footer{
+            text-align: center;
+        }
+        @media screen and (max-device-width: 900px) {
+            #vidsec { background-image: url('{{ asset('swdt_template/img/bgkaryab.jpg') }}');background-size: cover }
+            #vid { display: none; }
+            .watermark {top: 7%;}
+        }
+
+        .homepage-hero-module {
+            border-right: none;
+            border-left: none;
+            position: relative;
+        }
+        .no-video .video-container video,
+        .touch .video-container video {
+            display: none;
+        }
+        .no-video .video-container .poster,
+        .touch .video-container .poster {
+            display: block !important;
+        }
+        .video-container {
+            position: relative;
+            bottom: 0%;
+            left: 0%;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-container .poster img {
+            width: 100%;
+            bottom: 0;
+            position: absolute;
+        }
+        .video-container .filter {
+            z-index: 10;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: 100%;
+        }
+        .video-container video {
+            position: absolute;
+            z-index: 0;
+            bottom: 0;
+        }
+        .video-container video.fillWidth {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        {{ render(controller('swdtUserBundle:Security:login')) }}
+    </div>
+</div>
+<nav class="menu-desktop" style="background: #424242 linear-gradient(210deg, #424242 20%, #0e0e0e)">
+    <div class="container-fluid">
+        <ul>
+            <li><a href="#contact_Us">
+                    <div>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <span>تماس با ما</span>
+                    </div>
+                </a>
+            </li>
+            <li><a href="#about_Us‌">
+                    <div>
+                        <i class="fa fa-info" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <span>درباره ی ما</span>
+                    </div>
+                </a>
+            </li>
+            <li><a href="#why_Karyab">
+                    <div>
+                        <i class="fa fa-question" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <span>چرا کاریاب</span>
+                    </div>
+                </a>
+            </li>
+            <li><a href="#home">
+                    <div>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <span>خانه</span>
+                    </div>
+                </a>
+            </li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="exception-menu-item"><a href="{{ path('swdt_karyab_dashboard') }}">
+                        <div>
+                            <i class="fa fa-th-large" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <span>پنل کاربری</span>
+                        </div>
+                    </a>
+                </li>
+            {% else %}
+                <li class="exception-menu-item">
+                    <a  data-toggle="modal" data-target="#myModal">
+                        <div>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <span>ورود</span>
+                        </div>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<button class="linesButton-menu-mobile">
+    <span class="lines-menu-mobile lines-menu-mobile_1"></span>
+    <span class="lines-menu-mobile lines-menu-mobile_2"></span>
+    <span class="lines-menu-mobile lines-menu-mobile_3"></span>
+</button>
+<div class="container-fluid menu-mobile" style="background: #424242 linear-gradient(210deg, #424242 20%, #0e0e0e)">
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">
+            <div>
+                <a href="#about_Us‌">
+                    <i class="fa fa-info menu-icon-mobile" aria-hidden="true"></i>
+                    <span>درباره ی ما</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div>
+                <a href="#why_Karyab">
+                    <i class="fa fa-question menu-icon-mobile" aria-hidden="true"></i>
+                    <span>چرا کاریاب</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div>
+                <a href="#home">
+                    <i class="fa fa-home menu-icon-mobile" aria-hidden="true"></i>
+                    <span>خانه</span>
+                </a>
+            </div>
+        </div>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <div class="col-xs-2">
+                <div>
+                    <a href="{{ path('swdt_karyab_dashboard') }}">
+                        <i class="fa fa-th-large menu-icon-mobile" aria-hidden="true"></i>
+                        <span>پنل کاربری</span>
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-xs-2">
+                <div>
+                    <a  data-toggle="modal" data-target="#myModal">
+                        <i class="fa fa-user menu-icon-mobile" aria-hidden="true"></i>
+                        <span>ورود</span>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+        <div class="col-xs-2">
+            <div>
+                <a href="#contact_Us">
+                    <i class="fa fa-phone menu-icon-mobile" aria-hidden="true"></i>
+                    <span>تماس با ما</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div  class="homepage-hero-module section">
+    <a id="home"></a>
+    <div id="vidsec" class="video-container">
+        <div class="filter"></div>
+        <video id="vid"  autoplay loop class="fillWidth">
+            <source src="{{ asset('swdt_template/videos/Bokeh-Tov.mp4') }}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="{{ asset('swdt_template/videos/Bokeh-Tov.webm') }}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+
+        </video>
+        <div class="poster hidden">
+            <img src="{{ asset('swdt_template/img/bgkaryab.jpg') }}" alt="">
+        </div>
+        <div class="watermark">
+            <div class="container">
+                <div class="col-md-2"></div>
+                <div class="col-md-8"><img src="{{ asset('swdt_template/img/karyab-yellow-red.png') }}" width="100%" style="margin-bottom: 20px">
+                    <div class="col-md-12" style="text-align: justify;font-family:IRANSansWeb_Light,monospace;direction: rtl;font-size: 13pt;color: #fff;margin-bottom: 20px">کاریاب فرصتی برای دانشجویان است که بتوانند علاوه بر تحصیل شغل مورد علاقه خود را با توجه به مهارت های خود بیابند . همچنین کاریاب جهت تسهیل فرآیند استخدام برای کافرمایان امکانات مناسبی را فراهم آورده است . همین حالا ثبت نام کنید.</div>
+                    <div class="col-md-6" ><a href="{{ path('fos_user_registration_register_karfarma') }}"><div class="btn btn-info" style="width: 100%;padding: 20px;margin-top: 5px">ثبت نام کارفرما</div> </a></div>
+                    <div class="col-md-6"><a href="{{ path('fos_user_registration_register_karjoo') }}"><div class="btn btn-warning" style="width: 100%;padding: 20px;margin-top: 5px">ثبت نام کارجو</div></a></div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="section">
+    <a id="why_Karyab"></a>
+    <div class="col-md-12" style="text-align: center;background-color: #E1B252;padding-top: 80px;padding-bottom: 20px">
+        <h2 style="direction: rtl">چرا کاریاب؟!</h2>
+        <hr id="star1" class="star-light">
+        <div class="col-md-6 Why">
+            <div class="IconBox"><div class="fa fa-users"></div></div>
+            <div style="font-size: 18pt">فرصتی برای کارجویان</div>
+            <div class="WhyTextBox" style="font-family: IRANSansWeb_Light,monospace;text-align: justify">
+همواره در دانشگاه ها ، کار و یافتن شغل مناسب یکی از دغدغه های دانشجویان در طول دوران تحصیل و پس از آن به شمار می آید . همچنین تجربه های تلخ و نادرست کاری در این میان بسیاری از دانشجویان را نسبت به محیط کار بی اعتماد می سازد . وبسایت کاریاب با فراهم آوردن فرصت های شغلی در کنار یکدیگر و همچنین بررسی مهارت های دانشجویان و نیز هویت سنجی از شرکت ها در تلاش است تا با ارتباط درست بین کارجو و کارفرما گامی در جهت رفع نیاز و دغدغه های کارجویان که عموما دانشجو می باشند بردارد ، از سوی دیگر کارجویان می توانند با مشاهده فرصت های شغلی مرتبط با مهارت های خود نسبت به پیوستن به شغل مربوطه اقدام نمایند.
+            </div>
+        </div>
+        <div class="col-md-6 Why" style="border-left: 1px dashed #fff;">
+            <div class="IconBox"><div class="fa fa-user"></div></div>
+            <div style="font-size: 18pt">بستری مناسب برای کارفرمایان</div>
+            <div class="WhyTextBox" style="font-family: IRANSansWeb_Light,monospace;text-align: justify">
+در تمامی شرکت ها و سازمان ها همواره یافتن نیروی متخصص جهت استخدام برای یک موقعیت شغلی یک رکن اساسی برای رشد و اعتلای آن نهاد به حساب می آید . همچنین با توجه به این که بسیاری از شرکت ها ، سازمان ها و گروه ها برای یافتن فرد متخصص دارای محدودیت زمانی هستند در بیشتر مواقع به سمت نیروهای معروف و متخصصی روانه میشوند که گاها این رویه هزینه های گزاف را برای آن کارفرما در پی دارد . وبسایت کاریاب با فراهم آوردن بستری برای شرکت ها ، سازمان ها ، آزمایشگاه ها و تیم ها زمینه لازم برای جذب و استخدام نیروی متخصص را فراهم آورده است . به بیان دیگر کارفرمایان میتوانند با کاریاب متخصصین مورد نیاز خود را در سریعترین زمان ممکن بشناسند و با توجه به نیاز های خود بهترین گزینه را جهت استخدام و یا عقد قرارداد های مربوطه انتخاب نمایند .
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div id="about_Us‌" class="col-md-12" style="text-align: center;background-color: #52C8E1;padding-top: 80px;padding-bottom: 20px">
+        <h2 style="direction: rtl">درباره ما</h2>
+        <hr id="star2" class="star-light">
+        <div class="container" style="font-size: 16pt;direction: rtl;">
+            <p>وبسایت کاریاب در تاریخ شهریور ماه 1395 با هدف ایجاد بستر مناسب برای تسهیل ارتباط میان کارجو و کارفرما در دانشگاه شهید بهشتی کار خود را آغاز کرد . تیم کاریاب در تلاش است با دنبال کردن اهداف زیر گامی مهم در پیاده سازی سیستم های هوشمند جستجوی کار برای دانشجویان بردارد .</p>
+            <p><span class="fa fa-plus" style="margin: 10px;color: #fff;"></span>گسترش طیف رشته ها در وبسایت کاریاب و تبدیل آن به یک بنگاه کاریابی جامع برای دانشجویان تمامی رشته ها</p>
+            <p><span class="fa fa-plus" style="margin: 10px;color: #fff;"></span>هوشمند سازی و بهینه سازی مستمر الگوریتم ارتباط کارجو با کارفرما</p>
+            <p><span class="fa fa-plus" style="margin: 10px;color: #fff;"></span>بهینه سازی مستمر رابط کاربری با توجه به نیاز کاربران سایت و افزودن امکانات مورد نیاز آن ها جهت تسهیل کار با وبسایت</p>
+        </div>
+        <h3>تیم کاریاب</h3>
+        <hr id="star2" class="star-light">
+        <p style="margin-bottom: 20px">اعضای گروه برنامه نویسی وب دانشگاه شهید بهشتی که در طراحی و توسعه کاریاب ایفای نقش می کنند </p>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <img width="100%" style="border-radius:100%" src="{{ asset('swdt_template/img/mahdi.jpg') }}" />
+            <h4>محمد مهدی فاطمیان </h4>
+            <h5>Project Manager / Senior Ui-Developer</h5>
+            <div class="social">
+                <ul>
+                    <li><a href="https://facebook.com/m48d1" target="_blank" style="color:rgb(68, 68, 182)" class="fa fa-facebook-square"></a></li>
+                    {#<li><a href="#" target="_blank" style="color:rgb(239, 57, 57)" class="fa fa-google-plus-square"></a></li>#}
+                    <li><a href="https://ir.linkedin.com/in/mahdi-fatemian-615047129" target="_blank" style="color:rgb(42, 42, 138)" class="fa fa-linkedin-square"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2"><img width="100%" style="border-radius:100%" src="{{ asset('swdt_template/img/Mohammad.jpg') }}" />
+            <h4>محمد زمان زاده </h4>
+            <h5>Co Project Manager / Senior PHP-Developer</h5>
+            <div class="social">
+                <ul>
+                    {#<li><a href="#" style="color:rgb(68, 68, 182)" class="fa fa-facebook-square"></a></li>#}
+                    {#<li><a href="#" style="color:rgb(239, 57, 57)" class="fa fa-google-plus-square"></a></li>#}
+                    <li><a href="https://www.linkedin.com/in/mzamanzadeh" target="_blank" style="color:rgb(42, 42, 138)" class="fa fa-linkedin-square"></a></li>
+                    <li><a href="https://instagram.com/mohammadz96" target="_blank" style="color:rgb(255, 0, 0)" class="fa fa-instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2"><img width="100%" style="border-radius:100%" src="{{ asset('swdt_template/img/ahmadreza.jpg') }}" />
+            <h4>احمدرضا حسین خانی </h4>
+            <h5>Ui-Developer </h5>
+            <div class="social">
+                <ul>
+                    {#<li><a href="#" style="color:rgb(68, 68, 182)" class="fa fa-facebook-square"></a></li>#}
+                    {#<li><a href="#" style="color:rgb(239, 57, 57)" class="fa fa-google-plus-square"></a></li>#}
+                    {#<li><a href="#" style="color:rgb(42, 42, 138)" class="fa fa-linkedin-square"></a></li>#}
+                    {#<li><a href="#" style="color:rgb(69, 221, 69)" class="fa fa-instagram"></a></li>#}
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2"><img width="100%" style="border-radius:100%" src="{{ asset('swdt_template/img/abbaszadeh.jpg') }}" />
+            <h4>مهدی عباس زاده</h4>
+            <h5>PHP-Developer </h5>
+            <div class="social">
+                <ul>
+                    <li><a href="https://www.facebook.com/mahdi.asze" target="_blank" style="color:rgb(68, 68, 182)" class="fa fa-facebook-square"></a></li>
+                    {#<li><a href="https://abaszade.mahdi@gmail.com" target="_blank" style="color:rgb(239, 57, 57)" class="fa fa-google-plus-square"></a></li>#}
+                    {#<li><a href="#" style="color:rgb(42, 42, 138)" class="fa fa-linkedin-square"></a></li>#}
+                    <li><a href="https://ir.linkedin.com/in/mahdi-abbaszadeh-683193134" target="_blank" style="color:rgb(42, 42, 138)" class="fa fa-linkedin-square"></a></li>
+                    <li><a href="https://www.instagram.com/mahdi_asze/" target="_blank" style="color:rgb(255, 0, 0)" class="fa fa-instagram"></a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2"><img width="100%" style="border-radius:100%" src="{{ asset('swdt_template/img/atena.jpg') }}" />
+            <h4>آتنا لرنی</h4>
+            <h5>Ui-Designer / Graphist </h5>
+            <div class="social">
+                <ul>
+                    <li><a href="https://m.facebook.com/people/Atena-Larni/100003676091134" target="_blank" style="color:rgb(68, 68, 182)" class="fa fa-facebook-square"></a></li>
+                    {#<li><a href="#" style="color:rgb(239, 57, 57)" class="fa fa-google-plus-square"></a></li>#}
+                    <li><a href="https://ir.linkedin.com/in/atena-larni-9950a8112" target="_blank" style="color:rgb(42, 42, 138)" class="fa fa-linkedin-square"></a></li>
+                    <li><a href="https://instagram.com/atiraz9675" target="_blank" style="color:rgb(255, 0, 0)" class="fa fa-instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+<div class="section">
+    <div id="map"></div>
+    <a id="contact_Us"></a>
+    <div class="col-md-12" style="text-align: center;background-color: #E15252;padding-top: 80px;padding-bottom: 20px">
+        <h2 style="direction: rtl">تماس با ما</h2>
+        <hr id="star3" class="star-light">
+        <div class="col-md-3 Why">
+            <div class="IconBox" style="color: #e15252"><div class="fa fa-map-marker"></div></div>
+            <div style="font-size: 18pt">ما کجاییم؟</div>
+            <div class="WhyTextBox">
+
+                ولنجک ، بلوار دانشجو<br />
+                دانشگاه شهید بهشتی
+<br />
+دانشکده مهندسی و علوم کامپیوتر
+                <br />
+طبقه سوم ، سایت دانشکده
+                <br />
+                اتاق تیم برنامه نویسی وب
+            </div>
+        </div>
+        <div class="col-md-6 Why" style="border-left: 1px dashed #fff;border-right: 1px dashed #fff">
+           {% include '@swdtKaryab/Home/contactUs.html.twig' %}
+        </div>
+        <div class="col-md-3 Why">
+            <div class="IconBox" style="color: #e15252"><div class="fa fa-envelope"></div></div>
+            <div style="font-size: 18pt">رایانامه</div>
+            <div class="WhyTextBox">
+انتقادات و پیشنهادات
+<br />
+info@Karyab.sbu.ac.ir
+                <br />
+ارتباط مستقیم با تیم مدیریت
+                <br />
+webmaster@Karyab.sbu.ac.ir
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const backgroundVideo = new BackgroundVideo('.bv-video', {
+        src: [
+            '{{ asset('swdt_template/videos/Bokeh-Tov.mp4') }}',
+            '{{ asset('swdt_template/videos/Bokeh-Tov.webm') }}'
+        ],
+        onReady: function () {
+            // Use onReady() to prevent flickers or force loading state
+            const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
+            vidParent.classList.add('bv-video-wrap--ready');
+        }
+    });
+
+</script>
+<script>
+    function initMap() {
+        var uluru = {lat: 35.7996603, lng: 51.3955073};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+
+        });
+        map.setOptions({scrollwheel: false});
+
+    }
+
+</script>
+<script
+        async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA20MqunLD2P9La9bfrgmsMPsm0dmlXxws&callback=initMap">
+</script>
+<script>
+$(document).ready(function () {
+    $(".linesButton-menu-mobile").click(function () {
+        $(".lines-menu-mobile_1").toggleClass('changed');
+        $(".lines-menu-mobile_2").toggleClass('changed');
+        $(".lines-menu-mobile_3").toggleClass('changed');
+        $(".menu-mobile").toggleClass('changed');
+    });
+    scaleVideoContainer();
+
+    initBannerVideoSize('.video-container .poster img');
+    initBannerVideoSize('.video-container .filter');
+    initBannerVideoSize('.video-container video');
+
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .poster img');
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+    });
+});
+$(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target;
+            target = $(this.attributes[0].nodeValue);
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+});
+
+function scaleVideoContainer() {
+
+    var height = $(window).height() + 5;
+    var unitHeight = parseInt(height) + 'px';
+    $('.homepage-hero-module').css('height',unitHeight);
+
+}
+
+function initBannerVideoSize(element){
+
+    $(element).each(function(){
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+    });
+
+    scaleBannerVideoSize(element);
+
+}
+
+function scaleBannerVideoSize(element){
+
+    var windowWidth = $(window).width(),
+            windowHeight = $(window).height() + 5,
+            videoWidth,
+            videoHeight;
+
+    console.log(windowHeight);
+
+    $(element).each(function(){
+        var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+        $(this).width(windowWidth);
+
+        if(windowWidth < 1000){
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+            $(this).width(videoWidth).height(videoHeight);
+        }
+
+        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+    });
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

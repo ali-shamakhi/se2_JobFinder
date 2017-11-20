@@ -1,0 +1,51 @@
+<div class="IconBox" style="color: #e15252"><div class="fa fa-send"></div></div>
+<div style="font-size: 18pt">ارسال پیام</div>
+<form id="contactUs" method="post">
+    {{ form_widget(contactForm._token) }}
+<div class="WhyTextBox" style="font-size: 12pt;text-align: right;direction: rtl">
+<div id="error-msg1" class="col-md-12"></div>
+    <div id="change1" class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">نام و نام خانوادگی</label>
+            <input {% if app.user %}disabled value="{{ app.user.fName }} {{ app.user.lName }}" {% endif %} type="text" name="mz_new_contactUs[name]" class="form-control"   placeholder="نام و نام خانوادگی خود را وارد نمایید">
+        </div>
+    </div>
+    <div id="change1" class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">ایمیل</label>
+            <input {% if app.user %}disabled value="{{ app.user.email }}" {% endif %} type="email"  name="mz_new_contactUs[email]" class="form-control"   placeholder="ایمیل خود را وارد نمایید">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="exampleInputEmail1">موضوع</label>
+            <input type="text" class="form-control"  name="mz_new_contactUs[subject]"  placeholder="موضوع پیام خود را وارد نمایید">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="exampleInputEmail1">متن پیام</label>
+            <textarea type="text"  name="mz_new_contactUs[message]" class="form-control"  style="height: 100px"  placeholder="متن پیام خود را بنویسید"></textarea>
+        </div>
+    </div>
+    <div class="col-md-12" style="text-align: center">
+        <button style="margin-top:0px;padding-left: 25px;padding-right: 25px" type="submit" class="btn btn-default">ارسال پیام</button>
+    </div>
+</div>
+    </form>
+<script>
+    $(document).on('submit','#contactUs',function (e) {
+        e.preventDefault();
+        var dataTosend = $("#contactUs").serialize();
+        $.post("{{ path('swdt_karyab_contact_us') }}", dataTosend, function (res) {
+            if(res.success){
+                $("#contactUs").html("پیام فرستاده شد...");
+            }else {
+                $("#error-msg1").html("خطا");
+            }
+        });
+
+        return false;
+    })
+</script>

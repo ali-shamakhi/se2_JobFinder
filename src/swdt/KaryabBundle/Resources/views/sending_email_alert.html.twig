@@ -1,0 +1,23 @@
+{% extends '@swdtUser/layout.html.twig' %}
+{% block user_content %}
+<link rel="stylesheet" href="{{ asset('swdt_template/css1.css') }}">
+    <div class="col-md-12" style="margin-top:50px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="background-color: rgb(187, 255, 166);padding: 10px;font-family: yekan;direction: rtl;border-radius: 5px;box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.30);">
+            <i class="fa fa-spinner fa-spin fa-2x fa-fw" style="float:left"></i>
+            <div style="font-size:13pt;">
+                {% if message is not defined %}
+                    پیام شما با موفقیت ارسال گردید!
+                {% else %}
+                    {{ message }}
+                    {% endif %}
+            </div>
+            <script>
+                var timer = setTimeout(function() {
+                    window.location='{% if targetUrl is not defined %}{{ path('swdt_karyab_dashboard') }}{% else %}{{ targetUrl }}{% endif %}'
+                }, 3000);
+            </script>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+{% endblock %}
