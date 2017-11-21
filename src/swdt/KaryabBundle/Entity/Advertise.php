@@ -527,7 +527,7 @@ class Advertise
      * Absolute path.
      */
     protected function getUploadBrochureAbsolutePath(){
-        return __DIR__ . '/../../../../public_html/' . $this->getUploadBrochurePath();
+        return __DIR__ . '/../../../../web/' . $this->getUploadBrochurePath();
     }
 
     /**

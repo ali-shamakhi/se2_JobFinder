@@ -1,6 +1,6 @@
 swdt\KaryabBundle\Entity\Advertise:
     type: entity
-    table: swdt_advertises
+    table: se_advertises
     repositoryClass: swdt\KaryabBundle\Repository\AdvertiseRepository
     id:
         id:
@@ -64,7 +64,7 @@ swdt\KaryabBundle\Entity\Advertise:
           targetEntity: swdt\KaryabBundle\Entity\SkillTag
           inversedBy: advertises
           joinTable:
-            name: swdt_advertise_tags
+            name: se_advertise_tags
             joinColumns:
               advertise_id:
                 referencedColumnName: id

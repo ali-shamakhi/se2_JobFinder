@@ -30,8 +30,9 @@
 }
 body{
     font-family: IRANSansWeb,monospace;
-    background: url("img/night-dark-blur-hd-wallpapers.jpg") no-repeat fixed center;
-    background-size: cover;
+    /*background: url("img/night-dark-blur-hd-wallpapers.jpg") no-repeat fixed center;*/
+    /*background-size: cover;*/
+    background-color: gray;
 }
 @media (min-width: 1920px){
     .container {

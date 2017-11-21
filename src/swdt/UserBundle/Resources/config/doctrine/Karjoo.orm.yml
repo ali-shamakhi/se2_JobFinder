@@ -1,6 +1,6 @@
 swdt\UserBundle\Entity\Karjoo:
     type: entity
-    table: swdt_karjoo_extra
+    table: se_karjoo_extra
     repositoryClass: swdt\UserBundle\Repository\KarjooRepository
     id:
         id:
@@ -9,19 +9,6 @@ swdt\UserBundle\Entity\Karjoo:
             generator:
                 strategy: AUTO
     fields:
-        studentId:
-            type: string
-            length: '10'
-            nullable: true
-            unique: true
-            column: student_id
-
-        nationalId:
-            type: string
-            length: '10'
-            nullable: true
-            unique: true
-            column: national_id
         about:
             type: text
             nullable: true
@@ -33,83 +20,12 @@ swdt\UserBundle\Entity\Karjoo:
             type: string
             length: '12'
             nullable: true
-        soldiering:
-            type: smallint
-            nullable: true
-        grade:
-            type: smallint
-            nullable: true
-
         resume:
             type: text
             nullable: true
 
         website:
             type: string
-            nullable: true
-
-        is_student:
-            type: smallint
-            nullable: true
-
-        current_university:
-            type: string
-            length: 255
-            nullable: true
-
-        current_field:
-            type: string
-            length: 255
-            nullable: true
-
-        diplom_univesity:
-            type: string
-            length: 255
-            nullable: true
-
-        diplom_field:
-            type: string
-            length: 255
-            nullable: true
-
-        fogh_diplom_univesity:
-            type: string
-            length: 255
-            nullable: true
-
-        fogh_diplom_field:
-            type: string
-            length: 255
-            nullable: true
-
-        licanse_univesity:
-            type: string
-            length: 255
-            nullable: true
-
-        licanse_field:
-            type: string
-            length: 255
-            nullable: true
-
-        fogh_licanse_univesity:
-            type: string
-            length: 255
-            nullable: true
-
-        fogh_licanse_field:
-            type: string
-            length: 255
-            nullable: true
-
-        phd_univesity:
-            type: string
-            length: 255
-            nullable: true
-
-        phd_field:
-            type: string
-            length: 255
             nullable: true
         coOperation:
             type: json_array

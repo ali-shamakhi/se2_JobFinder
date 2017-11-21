@@ -1,6 +1,6 @@
 swdt\KaryabBundle\Entity\UserSkill:
     type: entity
-    table: swdt_users_skills
+    table: se_users_skills
     repositoryClass: swdt\KaryabBundle\Repository\UserSkillRepository
     id:
         id:

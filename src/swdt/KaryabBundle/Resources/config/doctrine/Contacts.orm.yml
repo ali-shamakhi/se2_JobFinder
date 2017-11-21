@@ -1,6 +1,6 @@
 swdt\KaryabBundle\Entity\Contacts:
     type: entity
-    table: swdt_contacts
+    table: se_contacts
     repositoryClass: swdt\KaryabBundle\Repository\ContactsRepository
     id:
         id:

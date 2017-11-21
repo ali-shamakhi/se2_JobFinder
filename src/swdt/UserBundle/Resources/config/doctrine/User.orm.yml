@@ -1,6 +1,6 @@
 swdt\UserBundle\Entity\User:
     type: entity
-    table: swdt_users
+    table: se_users
     repositoryClass: swdt\UserBundle\Repository\UserRepository
     id:
         id:

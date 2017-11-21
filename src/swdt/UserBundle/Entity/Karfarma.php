@@ -231,7 +231,7 @@ class Karfarma
      * Absolute path.
      */
     protected function getUploadAbsolutePath(){
-        return __DIR__ . '/../../../../public_html/' . $this->getUploadPath();
+        return __DIR__ . '/../../../../web/' . $this->getUploadPath();
     }
 
     /**
@@ -382,7 +382,7 @@ class Karfarma
      * Absolute path.
      */
     protected function getUploadAboutPicAbsolutePath(){
-        return __DIR__ . '/../../../../public_html/' . $this->getUploadAboutPicPath();
+        return __DIR__ . '/../../../../web/' . $this->getUploadAboutPicPath();
     }
 
     /**

@@ -30,28 +30,18 @@
                             {{ form_widget(form.gender) }}
                             {{ form_errors(form.gender) }}
                         </div>
-                        <div class="col-sm-12 soldier">
-                            <label class="title-label">*وضعیت سربازی</label><br>
-                            {{ form_widget(form.karjoo.soldiering) }}
-                            {{ form_errors(form.karjoo.soldiering) }}
-                        </div>
                         <div class="col-sm-12">
-                            <label for="birth_year" class="title-label">سال تولد</label>
-                            {{ form_widget(form.birth_year,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.birth_year) }}
-                        </div>
-                        <div class="col-sm-12">
-                            <label for="company_name" class="title-label">*کدملی</label>
-                            {{ form_widget(form.karjoo.national_id,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.national_id) }}
-                        </div>
-                        <div class="col-sm-12">
-                            <label for="phone" class="title-label">*شماره تماس ثبت نام کننده</label>
+                            <label for="phone" class="title-label">*شماره تماس </label>
                             {{ form_widget(form.mobile,{attr: {'class':'form-control'}}) }}
                             {{ form_errors(form.mobile) }}
                         </div>
                         <div class="col-sm-12">
-                            <label for="mail" class="title-label">*پست الکترونیک ثبت نام کننده</label>
+                            <label for="phone" class="title-label">سال تولد</label>
+                            {{ form_widget(form.birth_year,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.birth_year) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="mail" class="title-label">*پست الکترونیک </label>
                             {{ form_widget(form.email,{attr: {'class':'form-control'}}) }}
                             {{ form_errors(form.email) }}
                         </div>
@@ -59,7 +49,8 @@
                             <h3>شرایط و ضوابط سامانه کاریاب</h3>
                         </div>
                         <div class="col-sm-12 col-karjoo-sm">
-                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">سایت کاریاب صرفا به عنوان محل اتصال کارفرمایان و کارجویان عمل می کند و به کارفرمایان اجازه می دهد پروژه ها و شغل های خود را  به صورت آگهی ثبت کنند . سایت کاریاب همچنین امکان مشاهده آگهی های مرتبط و درخواست همکاری برای یک آگهی را برای کارجویان فراهم آورده است . وبسایت کاریاب خود را درگیر جزئیات فرصت های شغلی نمی کند. بنابراین سایت کاریاب هیچ گونه مسئولیتی در قبال آگهی های ارسال شده و همچنین کارآمد بودن کارجو ها با توجه به اطلاعات وارده از جانب آن ها ندارد و تضمینی بابت رعایت موارد بالا از جانب کارفرمایان و کارجویان نمیدهد .
+                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">
+شرایطططططططططططططط
                             </textarea>
                         </div>
                         <div class="col-sm-12 col-karjoo-sm" style="direction: ltr;text-align: right">
@@ -84,70 +75,13 @@
                                 {{ form_errors(f) }}
                             </div>
                         {% endfor %}
-                        <div class="col-sm-12">
-                            <h3>اطلاعات دانشگاهی</h3>
-                        </div>
-                        <div class="col-sm-12">
-                            <label class="title-label">آیا دانشجو هستید؟</label>
-                            {{ form_widget(form.karjoo.is_student,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.is_student) }}
-                        </div>
-                        <div id="student_id" class="col-sm-12">
-                            <label class="title-label">شماره دانشجویی</label>
-                            {{ form_widget(form.karjoo.student_id,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.student_id) }}
-                        </div>
-                        <div id="current_university" class="col-sm-12">
-                            <label class="title-label">دانشگاه فعلی</label>
-                            {{ form_widget(form.karjoo.current_university,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.current_university) }}
-                        </div>
-                        <div id="current_field" class="col-sm-12">
-                            <label class="title-label">رشته تحصیلی فعلی</label>
-                            {{ form_widget(form.karjoo.current_field,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.current_field) }}
-                        </div>
-                        <div class="col-sm-12">
-                            <label class="title-label">آخرین مقطع تحصیلی</label><br>
-                            {{ form_widget(form.karjoo.grade) }}
-                            {{ form_errors(form.karjoo.grade) }}
-                        </div>
-                        <div id="phd_univesity" class="col-sm-12">
-                            <label class="title-label">دانشگاه دکتری</label>
-                            {{ form_widget(form.karjoo.phd_univesity,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.phd_univesity) }}
-                        </div>
-                        <div id="phd_field" class="col-sm-12">
-                            <label class="title-label">رشته تحصیلی دکتری</label>
-                            {{ form_widget(form.karjoo.phd_field,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.phd_field) }}
-                        </div>
-                        <div id="fogh_licanse_univesity" class="col-sm-12">
-                            <label class="title-label">دانشگاه فوق لیسانس</label><br>
-                            {{ form_widget(form.karjoo.fogh_licanse_univesity,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.fogh_licanse_univesity) }}
-                        </div>
-                        <div id="fogh_licanse_field" class="col-sm-12">
-                            <label class="title-label">رشته تحصیلی فوق لیسانس</label>
-                            {{ form_widget(form.karjoo.fogh_licanse_field,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.fogh_licanse_field) }}
-                        </div>
-                        <div id="licanse_univesity" class="col-sm-12">
-                            <label class="title-label">دانشگاه لیسانس</label>
-                            {{ form_widget(form.karjoo.licanse_univesity,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.licanse_univesity) }}
-                        </div>
-                        <div id="licanse_field" class="col-sm-12">
-                            <label class="title-label">رشته تحصیلی لیسانس</label><br>
-                            {{ form_widget(form.karjoo.licanse_field,{attr: {'class':'form-control'}}) }}
-                            {{ form_errors(form.karjoo.licanse_field) }}
-                        </div>
+
                         <div class="col-sm-12 col-karjoo-xs">
                             <h3>شرایط و ضوابط سامانه کاریاب</h3>
                         </div>
                         <div class="col-sm-12 col-karjoo-xs">
-                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">سایت کاریاب صرفا به عنوان محل اتصال کارفرمایان و کارجویان عمل می کند و به کارفرمایان اجازه می دهد پروژه ها و شغل های خود را  به صورت آگهی ثبت کنند . سایت کاریاب همچنین امکان مشاهده آگهی های مرتبط و درخواست همکاری برای یک آگهی را برای کارجویان فراهم آورده است . وبسایت کاریاب خود را درگیر جزئیات فرصت های شغلی نمی کند. بنابراین سایت کاریاب هیچ گونه مسئولیتی در قبال آگهی های ارسال شده و همچنین کارآمد بودن کارجو ها با توجه به اطلاعات وارده از جانب آن ها ندارد و تضمینی بابت رعایت موارد بالا از جانب کارفرمایان و کارجویان نمیدهد .
-                            </textarea>
+                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">
+شرایط کاریاب شرایط اینه شرایطططططططططط                            </textarea>
                         </div>
                         <div class="col-sm-12 col-karjoo-xs" style="direction: ltr;text-align: right">
                             <div class="checkbox">

@@ -1,6 +1,6 @@
 swdt\KaryabBundle\Entity\jobRequest:
     type: entity
-    table: null
+    table: se_job_requests
     repositoryClass: swdt\KaryabBundle\Repository\jobRequestRepository
     id:
         id:

@@ -1,6 +1,6 @@
 swdt\UserBundle\Entity\Karfarma:
     type: entity
-    table: swdt_karfarma_extra
+    table: se_karfarma_extra
     repositoryClass: swdt\UserBundle\Repository\KarfarmaRepository
     id:
         id:

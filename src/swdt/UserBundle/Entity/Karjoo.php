@@ -26,10 +26,6 @@ class Karjoo
     {
         return $this->id;
     }
-    /**
-     * @var string
-     */
-    private $studentId;
 
     /**
      * @var string
@@ -142,28 +138,6 @@ class Karjoo
     private $user;
 
 
-    /**
-     * Set studentId
-     *
-     * @param string $studentId
-     * @return Karjoo
-     */
-    public function setStudentId($studentId)
-    {
-        $this->studentId = $studentId;
-
-        return $this;
-    }
-
-    /**
-     * Get studentId
-     *
-     * @return string 
-     */
-    public function getStudentId()
-    {
-        return $this->studentId;
-    }
 
     /**
      * Set nationalId
@@ -250,7 +224,7 @@ class Karjoo
      * Absolute path.
      */
     protected function getUploadAbsolutePath(){
-        return __DIR__ . '/../../../../public_html/' . $this->getUploadPath();
+        return __DIR__ . '/../../../../web/' . $this->getUploadPath();
     }
 
     /**
@@ -457,7 +431,7 @@ class Karjoo
      * Absolute path.
      */
     protected function getUploadResumeAbsolutePath(){
-        return __DIR__ . '/../../../../public_html/' . $this->getUploadResumePath();
+        return __DIR__ . '/../../../../web/' . $this->getUploadResumePath();
     }
 
     /**

@@ -272,67 +272,6 @@
 
     <class name="swdt\UserBundle\Entity\Karjoo">
 
-    <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
-        <option name="fields">nationalId</option>
-        <option name="message">کد ملی نمیتواند تکراری باشد</option>
-    </constraint>
-
-    <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
-        <option name="fields">studentId</option>
-        <option name="message">شماره دانشجویی نمیتواند تکراری باشد</option>
-    </constraint>
-
-        <property name="nationalId">
-
-            <constraint name="NotBlank">
-                <option name="message">لطفا کد ملی را وارد کنید</option>
-                <option name="groups">
-                    <value>Registration</value>
-                    <value>Profile</value>
-                </option>
-            </constraint>
-
-            <constraint name="Type">
-                <option name="type">numeric</option>
-                <option name="message">کد ملی نامعتبر است</option>
-                <option name="groups">
-                    <value>Registration</value>
-                    <value>Profile</value>
-                </option>
-            </constraint>
-
-            <constraint name="Length">
-                <option name="min">10</option>
-                <option name="max">10</option>
-                <option name="exactMessage">کد ملی 10 رقمی را وارد کنید</option>
-                <option name="groups">
-                    <value>Registration</value>
-                    <value>Profile</value>
-                </option>
-            </constraint>
-        </property>
-
-        <property name="studentId">
-
-            <constraint name="Type">
-                <option name="type">numeric</option>
-                <option name="message">شماره دانشجویی نامعتبر است</option>
-                <option name="groups">
-                    <value>Registration</value>
-                    <value>Profile</value>
-                </option>
-            </constraint>
-
-            <constraint name="Length">
-                <option name="min">8</option>
-                <option name="max">8</option>
-                <option name="exactMessage">شماره دانشجویی باید 8 رقم داشته باشد</option>
-                <option name="groups">
-                    <value>Registration</value>
-                    <value>Profile</value>
-                </option>
-            </constraint>
-        </property>
 
         <property name="file">
             <constraint name="Image">

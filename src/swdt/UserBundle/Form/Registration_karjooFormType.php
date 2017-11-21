@@ -70,9 +70,6 @@ class Registration_karjooFormType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true,
             ))
-            ->add('karjoo',new Registration_karjooExtraFormType(),array(
-                'cascade_validation' => true,
-            ))
         ;
     }
 

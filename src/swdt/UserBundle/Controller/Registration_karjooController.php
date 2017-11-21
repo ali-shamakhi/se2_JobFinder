@@ -15,6 +15,8 @@ use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\Event\FilterUserResponseEvent;;
+
+use swdt\UserBundle\Entity\Karjoo;
 use swdt\UserBundle\Form\Registration_karjooFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -78,9 +80,9 @@ class Registration_karjooController extends Controller
             );
 
             $user->addRole('ROLE_KARJOO');
+            $user->setKarjoo(new Karjoo());
             $event = new FormEvent($form, $request);
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
-            $user->getKarjoo()->setCoOperation(array(0,1,2,3,4));
             $user->getKarjoo()->setUser($user);
             $userManager->updateUser($user);
 

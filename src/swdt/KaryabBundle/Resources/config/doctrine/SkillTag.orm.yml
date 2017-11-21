@@ -1,6 +1,6 @@
 swdt\KaryabBundle\Entity\SkillTag:
     type: entity
-    table: swdt_skill_tags
+    table: se_skill_tags
     repositoryClass: swdt\KaryabBundle\Repository\SkillTagRepository
     id:
         id:
