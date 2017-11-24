@@ -55,7 +55,7 @@ class Profile_karjooExtraFormType extends AbstractType
             ->add('about','textarea',array(
                 'required'=>false,
                 'attr' => array(
-                    'placeholder' => 'اگر دارای سوابق کاری هستید آن را به صورت کامل شرح دهید',
+                    'placeholder' => '',
                     'rows' => '3')
             ))
         ;

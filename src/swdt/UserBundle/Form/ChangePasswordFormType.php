@@ -39,17 +39,17 @@ class ChangePasswordFormType extends AbstractType
             'mapped' => false,
             'constraints' => new UserPassword(),
                 'attr' => array(
-                    'placeholder' => 'پسورد کنونی خود را وارد کنید ')
+                    'placeholder' => '')
         ));*/
         $builder->add('plainPassword', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\RepeatedType'), array(
             'type' => LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\PasswordType'),
             'options' => array('translation_domain' => 'FOSUserBundle'),
             'first_options' => array('label' => 'form.new_password',
                 'attr' => array(
-                    'placeholder' => 'پسورد جدید را وارد کنید (حداقل ۶ کاراکتر )'),),
+                    'placeholder' => ''),),
             'second_options' => array('label' => 'form.new_password_confirmation',
                 'attr' => array(
-                    'placeholder' => 'پسورد خود را تکرار کنید ')),
+                    'placeholder' => '')),
             'invalid_message' => 'fos_user.password.mismatch',
             'required' => false,
         ));
@@ -59,14 +59,14 @@ class ChangePasswordFormType extends AbstractType
                 'label' =>'*نام',
                 'max_length' => 50,
                 'attr' => array(
-                    'placeholder' => 'نام خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('lName','text',array(
                 'label' =>'*نام خانوادگی',
                 'max_length' => 50,
                 'attr' => array(
-                    'placeholder' => 'نام خانوادگی خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
         ;

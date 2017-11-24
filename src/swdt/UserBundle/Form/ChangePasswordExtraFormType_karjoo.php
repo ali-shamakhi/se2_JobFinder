@@ -28,7 +28,7 @@ class ChangePasswordExtraFormType_karjoo extends AbstractType
                 'label' => 'وبسایت',
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'وبسایت خود را وارد کنید',
+                    'placeholder' => '',
                 )
 
             ))
@@ -37,7 +37,7 @@ class ChangePasswordExtraFormType_karjoo extends AbstractType
                 'max_length' => 12,
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'شماره دانشجویی خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
         ;

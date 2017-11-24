@@ -39,17 +39,17 @@ class ChangePasswordFormType_karjoo extends AbstractType
             'mapped' => false,
             'constraints' => new UserPassword(),
                 'attr' => array(
-                    'placeholder' => 'پسورد کنونی خود را وارد کنید ')
+                    'placeholder' => '')
         ));*/
         $builder->add('plainPassword', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\RepeatedType'), array(
             'type' => LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\PasswordType'),
             'options' => array('translation_domain' => 'FOSUserBundle'),
             'first_options' => array('label' => 'form.new_password',
                 'attr' => array(
-                    'placeholder' => 'پسورد جدید را وارد کنید (حداقل ۶ کاراکتر )'),),
+                    'placeholder' => ''),),
             'second_options' => array('label' => 'form.new_password_confirmation',
                 'attr' => array(
-                    'placeholder' => 'پسورد خود را تکرار کنید ')),
+                    'placeholder' => '')),
             'invalid_message' => 'fos_user.password.mismatch',
             'required' => false,
         ));
@@ -59,14 +59,14 @@ class ChangePasswordFormType_karjoo extends AbstractType
                 'label' =>'نام',
                 'max_length' => 50,
                 'attr' => array(
-                    'placeholder' => 'نام خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('lName','text',array(
                 'label' =>'نام خانوادگی',
                 'max_length' => 50,
                 'attr' => array(
-                    'placeholder' => 'نام خانوادگی خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('gender','choice',array(
@@ -76,7 +76,7 @@ class ChangePasswordFormType_karjoo extends AbstractType
             ))
             ->add('mobile','text',array(
                 'attr' => array(
-                    'placeholder' => 'شماره تماس خود را به همراه پیش شماره وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('birth_year','text',array(
@@ -84,7 +84,7 @@ class ChangePasswordFormType_karjoo extends AbstractType
                 'max_length'=>4,
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'سال تولد خود را وارد کنید(هر ۴ رقم)',
+                    'placeholder' => '',
                     'min' => 1300,
                     'max' => date('Y') - 621,
                 )
@@ -92,7 +92,7 @@ class ChangePasswordFormType_karjoo extends AbstractType
             ->add('email','text',array(
                 'label' => 'پست الکترونیکی',
                 'attr' => array(
-                    'placeholder' => 'پست الکترونیکی را وارد کنید.',
+                    'placeholder' => '',
                 )
             ))
             ->add('karjoo',new ChangePasswordExtraFormType_karjoo())

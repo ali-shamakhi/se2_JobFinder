@@ -24,24 +24,24 @@ class contactUsFormType extends AbstractType
             ->add('name','text',array(
                 'label' => 'نام کامل',
                 'attr' => array(
-                    'placeholder' => 'نام کامل خود را وارد کنید')
+                    'placeholder' => '')
             ))
 
             ->add('email','email',array(
                 'label' => 'پست الکترونیک',
                 'attr' =>array(
-                    'placeholder' => 'پست الکترونیک خود را وارد کنید')
+                    'placeholder' => '')
             ))
             ->add('subject','text',array(
                 'label' => 'موضوع',
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'موضوع پیام')
+                    'placeholder' => '')
             ))
             ->add('message','textarea',array(
                 'label' => 'متن پیام',
                 'attr' => array(
-                    'placeholder' => 'متن پیام خود را وارد کنید')
+                    'placeholder' => '')
             ))
         ;
     }

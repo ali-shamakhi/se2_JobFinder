@@ -29,7 +29,7 @@ class Registration_karfarmaExtraFormType extends AbstractType
                 'max_length' => 12,
                 'required' => false,
                     'attr' => array(
-                        'placeholder' => 'شماره تماس خود را به همراه پیش شماره وارد کنید',
+                        'placeholder' => '',
                     )
 
             ))
@@ -37,7 +37,7 @@ class Registration_karfarmaExtraFormType extends AbstractType
                 'label' => 'درباره کارفرما (سال تاسیس ، اهداف ، وجه تمایز و ...)',
                 'required'=>false,
                 'attr' => array(
-                    'placeholder' => 'توضیحات لازم درباره کارفرما',
+                    'placeholder' => '',
                 )
             ))
             ->add('company_name','text',array(
@@ -45,7 +45,7 @@ class Registration_karfarmaExtraFormType extends AbstractType
                 'max_length' => 100,
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'نام کارفرما را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('company_field','text',array(
@@ -53,7 +53,7 @@ class Registration_karfarmaExtraFormType extends AbstractType
                 'max_length' => 100,
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'زمینه کاری کارفرما را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('company_email','email',array(
@@ -61,14 +61,14 @@ class Registration_karfarmaExtraFormType extends AbstractType
                 'max_length' => 100,
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'پست الکترونیکی کارفرما را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('address','text',array(
                 'label' => 'آدرس کارفرما',
                 'required' => false,
                'attr' => array(
-                   'placeholder' => 'آدرس کامل کارفرما را وارد کنید',
+                   'placeholder' => '',
                )
             ))
 
@@ -76,7 +76,7 @@ class Registration_karfarmaExtraFormType extends AbstractType
                 'label' => 'وبسایت',
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'وبسایت خود را وارد کنید',
+                    'placeholder' => '',
                 )
 
             ));

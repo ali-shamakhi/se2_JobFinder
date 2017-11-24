@@ -21,30 +21,30 @@ class advertisesFormType extends AbstractType
 	     ->add('title','text',array(
                 'label' => '*عنوان آگهی',
              'attr' => array(
-                 'placeholder' => 'عنوان آگهی را وارد کنید ')
+                 'placeholder' => '')
             ))
 	    ->add('description','textarea',array(
 	        'label' => 'شرح آگهی',
             'attr' => array(
-                'placeholder' => 'شرح آگهی را وارد کنید',
+                'placeholder' => '',
                 'rows' => '3')
             ))
             ->add('gender','choice',array(
                 'label' =>'جنسیت',
-                'placeholder' => 'جنسیت را انتخاب کنید',
+                'placeholder' => '',
                 'choices' => array(1=> 'مرد' , 2 => 'زن' ,0 => 'مهم نیست'),
                 'multiple' => false
             ))
             ->add('grade','choice',array(
                 'label' => 'حداقل میزان تحصیلات',
-                'placeholder' => 'حداقل میزان تحصیلات را انتخاب کنید',
+                'placeholder' => '',
                 'choices' => array(
                     1=> 'دکترا' , 2 => 'فوق لیسانس' ,3 => 'لیسانس', 4 => 'فوق دیپلم', 5 => 'دیپلم', 6=> 'زیر دیپلم'),
                 'multiple' => false
             ))
             ->add('soldiery','choice',array(
                 'label' => 'وضعیت سربازی',
-                'placeholder' => 'وضعیت سربازی را انتخاب کنید',
+                'placeholder' => '',
 
                 'choices' => array(1=> 'معافیت دائم' , 2 => 'پایان خدمت' ,3 => 'معافیت تحصیلی',0=>'مهم نیست'),
                 'multiple' => false
@@ -69,7 +69,7 @@ class advertisesFormType extends AbstractType
             ->add('otherSkills','textarea',array(
                 'label' => 'سایرمهارت ها',
                 'attr' => array(
-                    'placeholder' => 'سایر مهارت های لازم را در اینجا وارد کنید',
+                    'placeholder' => '',
                     'rows' => '3'
                 )
             ))

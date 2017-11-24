@@ -26,7 +26,7 @@ class Profile_karfarmaFormType extends AbstractType
         $builder
             ->add('mobile','text',array(
                 'attr' => array(
-                    'placeholder' => 'شماره موبایل خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('karfarma',new Profile_karfarmaExtraFormType())

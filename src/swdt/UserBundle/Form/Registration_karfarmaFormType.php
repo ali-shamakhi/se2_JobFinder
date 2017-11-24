@@ -28,20 +28,20 @@ class Registration_karfarmaFormType extends AbstractType
                 'label' =>'نام',
                 'max_length' => 50,
                 'attr' => array(
-                    'placeholder' => 'نام خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('lName','text',array(
                 'label' =>'نام خانوادگی',
                 'max_length' => 50,
                 'attr' => array(
-                    'placeholder' => 'نام خانوادگی خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             /*->add('gender','choice',array(
                 'label' =>'جنسیت',
                 'required' => false,
-                'placeholder' => 'جنسیت خود را انتخاب کنید',
+                'placeholder' => '',
                 'choices' => array(1=> 'مرد' , 2 => 'زن' ),
                 'multiple' => false,
             ))
@@ -49,7 +49,7 @@ class Registration_karfarmaFormType extends AbstractType
                 'label' => 'سال تولد',
                 'required' => false,
                 'attr' => array(
-                    'placeholder' => 'سال تولد خود را وارد کنید(هر ۴ رقم)',
+                    'placeholder' => '',
                     'min' => 1300,
                     'max' => date('Y') - 621,
                 )
@@ -59,7 +59,7 @@ class Registration_karfarmaFormType extends AbstractType
                 'label' => 'شماره موبایل',
                 'max_length' => 12,
                 'attr' => array(
-                    'placeholder' => 'شماره موبایل خود را وارد کنید',
+                    'placeholder' => '',
                 )
             ))
             ->add('karfarma',new Registration_karfarmaExtraFormType())
