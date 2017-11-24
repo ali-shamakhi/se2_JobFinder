@@ -43,7 +43,7 @@ class pagesController extends Controller
 //                $message = \Swift_Message::newInstance()
 //                    ->setSubject($form->get('subject')->getData())
 //                    ->setFrom($form->get('mail')->getData())
-//                    ->setTo('webmaster@karyab.sbu.ac.ir')
+//                    ->setTo('webmaster@daneshkar.net')
 //                    ->setBody(
 //                        $this->renderView(
 //                            '@swdtKaryab/Email/newContactUs.html.twig',

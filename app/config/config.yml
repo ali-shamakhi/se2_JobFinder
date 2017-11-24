@@ -81,7 +81,7 @@ fos_user:
         email:
             template:   swdtKaryabBundle:Email:resetPassword.html.twig
     from_email:
-        address:        no-reply@karyab.sbu.ac.ir
+        address:        no-reply@daneshkar.net
         sender_name:    دانشکار!
 
 gregwar_captcha: ~
