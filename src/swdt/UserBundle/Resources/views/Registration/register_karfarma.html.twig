@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-1 col-lg-2"></div>
             <div class="container-fluid col-md-10 col-lg-8 register-karfarma">
-                <h1 style="text-align: center;margin-bottom: 45px">عضویت در سامانه کاریاب به عنوان کارفرما</h1>
+                <h1 style="text-align: center;margin-bottom: 45px">عضویت در سامانه دانشکار به عنوان کارفرما</h1>
                 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register_karfarma')}) }}
                 {% if form.vars.errors %}
                     <div class="errorBox">{{ form_errors(form) }}</div>
@@ -88,13 +88,13 @@
                             {{ form_errors(form.karfarma.website) }}
                         </div>
                         <div class="col-sm-12">
-                            <label for="#" class="title-label">شرایط و ضوابط سامانه کاریاب</label>
-                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">سایت کاریاب صرفا به عنوان محل اتصال کارفرمایان و کارجویان عمل می کند و به کارفرمایان اجازه می دهد پروژه ها و شغل های خود را  به صورت آگهی ثبت کنند . سایت کاریاب همچنین امکان مشاهده آگهی های مرتبط و درخواست همکاری برای یک آگهی را برای کارجویان فراهم آورده است . وبسایت کاریاب خود را درگیر جزئیات فرصت های شغلی نمی کند. بنابراین سایت کاریاب هیچ گونه مسئولیتی در قبال آگهی های ارسال شده و همچنین کارآمد بودن کارجو ها با توجه به اطلاعات وارده از جانب آن ها ندارد و تضمینی بابت رعایت موارد بالا از جانب کارفرمایان و کارجویان نمیدهد .
+                            <label for="#" class="title-label">شرایط و ضوابط سامانه دانشکار</label>
+                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">سایت دانشکار صرفا به عنوان محل اتصال کارفرمایان و کارجویان عمل می کند و به کارفرمایان اجازه می دهد پروژه ها و شغل های خود را  به صورت آگهی ثبت کنند . سایت دانشکار همچنین امکان مشاهده آگهی های مرتبط و درخواست همکاری برای یک آگهی را برای کارجویان فراهم آورده است . وبسایت دانشکار خود را درگیر جزئیات فرصت های شغلی نمی کند. بنابراین سایت دانشکار هیچ گونه مسئولیتی در قبال آگهی های ارسال شده و همچنین کارآمد بودن کارجو ها با توجه به اطلاعات وارده از جانب آن ها ندارد و تضمینی بابت رعایت موارد بالا از جانب کارفرمایان و کارجویان نمیدهد .
                             </textarea>
                         </div>
                         <div class="col-sm-12" style="direction: ltr;text-align: right">
                             <div class="checkbox">
-                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه کاریاب را به طور کامل مطالعه کرده و قبول دارم</label>
+                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه دانشکار را به طور کامل مطالعه کرده و قبول دارم</label>
                             </div>
                         </div>
                         <div class="col-sm-12">

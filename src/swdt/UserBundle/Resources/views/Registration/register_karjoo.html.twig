@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-1 col-lg-2"></div>
             <div class="container-fluid col-md-10 col-lg-8 register-karjoo">
-                <h1 style="text-align: center;margin-bottom: 45px">عضویت در سامانه کاریاب به عنوان کارجو</h1>
+                <h1 style="text-align: center;margin-bottom: 45px">عضویت در سامانه دانشکار به عنوان کارجو</h1>
                 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register_karjoo')}) }}
                 {% if form.vars.errors %}
                     <div class="errorBox">{{ form_errors(form) }}</div>
@@ -46,7 +46,7 @@
                             {{ form_errors(form.email) }}
                         </div>
                         <div class="col-sm-12 col-karjoo-sm">
-                            <h3>شرایط و ضوابط سامانه کاریاب</h3>
+                            <h3>شرایط و ضوابط سامانه دانشکار</h3>
                         </div>
                         <div class="col-sm-12 col-karjoo-sm">
                             <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">
@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-sm-12 col-karjoo-sm" style="direction: ltr;text-align: right">
                             <div class="checkbox">
-                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه کاریاب را به طور کامل مطالعه کرده و قبول دارم</label>
+                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه دانشکار را به طور کامل مطالعه کرده و قبول دارم</label>
                             </div>
                         </div>
                     </div>
@@ -77,15 +77,15 @@
                         {% endfor %}
 
                         <div class="col-sm-12 col-karjoo-xs">
-                            <h3>شرایط و ضوابط سامانه کاریاب</h3>
+                            <h3>شرایط و ضوابط سامانه دانشکار</h3>
                         </div>
                         <div class="col-sm-12 col-karjoo-xs">
                             <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">
-شرایط کاریاب شرایط اینه شرایطططططططططط                            </textarea>
+شرایط دانشکار شرایط اینه شرایطططططططططط                            </textarea>
                         </div>
                         <div class="col-sm-12 col-karjoo-xs" style="direction: ltr;text-align: right">
                             <div class="checkbox">
-                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه کاریاب را به طور کامل مطالعه کرده و قبول دارم</label>
+                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه دانشکار را به طور کامل مطالعه کرده و قبول دارم</label>
                             </div>
                         </div>
                         <div class="col-sm-12">
