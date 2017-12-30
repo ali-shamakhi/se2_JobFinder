@@ -4,6 +4,21 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
+    <title>SWDT</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link href="css1.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+
+    <meta charset="UTF-8">
     <title>دانشکار {% block title %}{% endblock %}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('am_template/bootstrap.min.css') }}">
 
     <script src="{{ asset('am_template/js/jquery.min.js') }}"></script>
-    
+
     <script src="{{ asset('am_template/js/jquery-1.11.1.js') }}"></script>
 
     <script src="{{ asset('am_template/js/bootstrap.min.js') }}"></script>
@@ -28,169 +43,123 @@
     <link rel="stylesheet" href="{{ asset('am_template/css/bootstrap-select.min.css') }}">
     <link rel="stylesheet" href="{{ asset('am_template/font-awesome-4.7.0/css/font-awesome.min.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('am_template/NewCss.css') }}">
-<style>
-.close{
-    float: left;
-}
-.modal-content{
-    text-align: right;
-}
-.modal-footer{
-    text-align: center;
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="{{ asset('am_template/css1.css') }}">
+
 </head>
 <body>
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        {{ render(controller('amUserBundle:Security:login')) }}
-
-    </div>
-</div>
-{#<nav class="menu-desktop">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <ul>
-            <li><a href="{{ path('am_karyab_homepage') }}#contact_Us">
-                    <div>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <span>تماس با ما</span>
-                    </div>
-                </a>
-            </li>
-            <li><a href="{{ path('am_karyab_homepage') }}#about_Us">
-                    <div>
-                        <i class="fa fa-info" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <span>درباره ی ما</span>
-                    </div>
-                </a>
-            </li>
-            <li><a href="{{ path('am_karyab_homepage') }}">
-                    <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <span>خانه</span>
-                    </div>
-                </a>
-            </li>
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <li class="exception-menu-item"><a href="{{ path('am_karyab_dashboard') }}">
-                        <div>
-                            <i class="fa fa-th-large" aria-hidden="true"></i>
-                        </div>
-                        <div>
-                            <span>پنل کاربری</span>
-                        </div>
-                    </a>
-                </li>
-            {% else %}
-                <li class="exception-menu-item">
-                    <a  data-toggle="modal" data-target="#myModal">
-                        <div>
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                        </div>
-                        <div>
-                            <span>ورود</span>
-                        </div>
-                    </a>
-                </li>
-            {% endif %}
-        </ul>
-
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#">کاریاب</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">تماس با ما</a></li>
+                <li><a href="#">درباره ی ما</a></li>
+                <li><a href="#">کارها</a></li>
+                <li><a href="#">صفحه اصلی</a></li>
+            </ul>
+        </div>
     </div>
-</nav>#}
-<button class="linesButton-menu-mobile">
-    <span class="lines-menu-mobile lines-menu-mobile_1"></span>
-    <span class="lines-menu-mobile lines-menu-mobile_2"></span>
-    <span class="lines-menu-mobile lines-menu-mobile_3"></span>
-</button>
-<div class="container-fluid menu-mobile">
-    <div class="row">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-2">
-            <div>
-                <a href="{{ path('am_karyab_homepage') }}#about_Us‌">
-                    <i class="fa fa-info menu-icon-mobile" aria-hidden="true"></i>
-                    <span>درباره ی ما</span>
-                </a>
+</nav>
+<div class="container-fluid" style="font-family:yekan;text-align:right;padding:10px;padding-right:25px;padding-left:25px" id="bor">
+    <div style="float:left">23:22:12 | دوشنبه 24 دی 1395</div>
+    <div>مهدی فاطمیان عزیز خوش آمدید</div>
+</div>
+<div class="my_sidebar_sm">
+    <ul>
+        <li><a href="#"><i class="fa fa-inbox fa-2x fa-fw" style="line-height: 1.25;"></i><div>فرصت های شغلی</div></a></li>
+        <li><a href="#"><i class="fa fa-info fa-2x fa-fw" style="line-height: 1.25;"></i><div>تغییر اطلاعات کاری</div></a></li>
+        <li><a href="#"><i class="fa fa-user fa-2x fa-fw" style="line-height: 1.25;"></i><div>تغییر اطلاعات کاربری</div></a></li>
+        <li><a href="#"><i class="fa fa-power-off fa-2x fa-fw" style="line-height: 1.25;"></i><div>خروج</div></a></li>
+    </ul>
+</div>
+<div class="my_sidebar_lg">
+    <ul>
+        <li><a href="#"><i class="fa fa-inbox fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">فرصت های شغلی</div></a></li>
+        <li><a href="#"><i class="fa fa-info fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">تغییر اطلاعات کاری</div></a></li>
+        <li><a href="#"><i class="fa fa-user fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">تغییر اطلاعات کاربری</div></a></li>
+        <li><a href="#"><i class="fa fa-power-off fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">خروج</div></a></li>
+    </ul>
+</div>
+
+
+
+
+
+<div class="advertisement">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <label id="my_button1" class="btn btn-info" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" onclick=toggle1()>مشاهده آگهی ...</label>
+            <div class="my_title">
+                <span>عنوان آگهی : طراح وب</span>
+                <span style="vertical-align: top">شرکت : فرادیس البرز</span>
             </div>
-        </div>
-        <div class="col-xs-2">
-            <div>
-                <a href="{{ path('am_karyab_homepage') }}">
-                    <i class="fa fa-home menu-icon-mobile" aria-hidden="true"></i>
-                    <span>خانه</span>
-                </a>
-            </div>
-        </div>
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <div class="col-xs-2">
-                <div>
-                    <a href="{{ path('am_karyab_dashboard') }}">
-                        <i class="fa fa-th-large menu-icon-mobile" aria-hidden="true"></i>
-                        <span>پنل کاربری</span>
-                    </a>
+            <div class="clear_fix"></div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div><span class="first">شرح شغل و آگهی ارسالی : </span><span>مسلط به C#,HTML,CSS</span></div>
+                    <div><span class="first">سایر مهارت ها : </span><span>---</span></div>
+                    <div><span class="first">میزان تحصیلات : </span><span>لیسانس</span></div>
+                    <div><span class="first">جنسیت : </span><span>مذکر</span></div>
+                    <div><span class="first">وضعیت استخدامی : </span><span>پاره وقت</span></div>
+                    <div><span class="first">وضعیت سربازی : </span><span>معافیت تحصیلی</span></div>
+                    <div>
+                        <label class="btn btn-success btn-file" style="width: 12%;min-width: 93px;float: left;padding: 1px 12px;">
+                            ارسال رزومه ... <input type="file" style="display: none;">
+                        </label>
+                    </div>
                 </div>
             </div>
-        {% else %}
-            <div class="col-xs-2">
-                <div>
-                    <a data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-user menu-icon-mobile" aria-hidden="true"></i>
-                        <span>ورود</span>
-                    </a>
-                </div>
-            </div>
-        {% endif %}
-        <div class="col-xs-2">
-            <div>
-                <a href="{{ path('am_karyab_homepage') }}#contact_Us">
-                    <i class="fa fa-phone menu-icon-mobile" aria-hidden="true"></i>
-                    <span>تماس با ما</span>
-                </a>
-            </div>
+        </div>
+        <div class="panel panel-default">
+            <label id="my_button2" class="btn btn-info" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" onclick=toggle2()>مشاهده آگهی ...</label>
+            {% block karyabContent %}{% endblock %}
+
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $(".linesButton-menu-mobile").click(function () {
-            $(".lines-menu-mobile_1").toggleClass('changed');
-            $(".lines-menu-mobile_2").toggleClass('changed');
-            $(".lines-menu-mobile_3").toggleClass('changed');
-            $(".menu-mobile").toggleClass('changed');
-        });
-    });
-</script>
 
 
+<div class="container-fluid my_footer">
+    <span>یک محصول از گروه SSWD</span>
+    <ul>
+        <li><a href="#">وبلاگ</a><i class="fa fa-circle" style="font-size: 0.5em;color: #D81B60;margin-left: 3px"></i></li>
+        <li><a href="#">تماس با ما</a><i class="fa fa-circle" style="font-size: 0.5em;color: #D81B60;margin-left: 3px"></i></li>
+        <li><a href="#">امکانات</a></li>
+    </ul>
+</div>
 
 
-
-
-{#<div class="container-fluid" style="font-family:yekan;text-align:right;padding:10px;padding-right:25px;padding-left:25px" id="bor">#}
-{##}
-    {#<div style="float:left">23:22:12 | دوشنبه 24 دی 1395</div>#}
-{##}
-    {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
-    {#<div>{{ app.user.fName }} {{ app.user.lName }} عزیز خوش آمدید</div>#}
-    {#{% endif %}#}
-{#</div>#}
-{% block karyabContent %}{% endblock %}
-{#<div class="container-fluid my_footer">#}
-    {#<ul>#}
-        {#<li><a href="#">وبلاگ</a><i class="fa fa-circle" style="font-size: 0.5em;color: #D81B60;margin-left: 3px"></i></li>#}
-        {#<li><a href="#">تماس با ما</a><i class="fa fa-circle" style="font-size: 0.5em;color: #D81B60;margin-left: 3px"></i></li>#}
-        {#<li><a href="#">امکانات</a></li>#}
-    {#</ul>#}
-{#</div>#}
 </body>
 </html>
+
+
+{#<div class="my_title">
+    <span>عنوان آگهی : برنامه نویس وب</span>
+    <span style="vertical-align: top;">شرکت : intek</span>
+</div>
+<div class="clear_fix"></div>
+<div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
+        <div><span class="first">شرح شغل و آگهی ارسالی : </span><span>مسلط به C#,HTML,CSS</span></div>
+        <div><span class="first">سایر مهارت ها : </span><span>---</span></div>
+        <div><span class="first">میزان تحصیلات : </span><span>لیسانس</span></div>
+        <div><span class="first">جنسیت : </span><span>مذکر</span></div>
+        <div><span class="first">وضعیت استخدامی : </span><span>پاره وقت</span></div>
+        <div><span class="first">وضعیت سربازی : </span><span>معافیت تحصیلی</span></div>
+        <div>
+            <label class="btn btn-success btn-file" style="width: 12%;min-width: 93px;float: left;padding: 1px 12px;">
+                ارسال رزومه ...
+                <input type="file" style="display: none;">
+            </label>
+        </div>
+    </div>
+</div>#}
