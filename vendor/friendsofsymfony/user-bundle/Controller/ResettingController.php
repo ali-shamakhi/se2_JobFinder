@@ -34,7 +34,7 @@ class ResettingController extends Controller
      */
     public function requestAction()
     {
-        return $this->render('swdtUserBundle:Resetting:request.html.twig');
+        return $this->render('amUserBundle:Resetting:request.html.twig');
     }
 
     /**
@@ -84,7 +84,7 @@ class ResettingController extends Controller
             return new RedirectResponse($this->generateUrl('fos_user_resetting_request'));
         }
 
-        return $this->render('swdtUserBundle:Resetting:checkEmail.html.twig', array(
+        return $this->render('amUserBundle:Resetting:checkEmail.html.twig', array(
             'email' => $email,
         ));
     }
@@ -135,7 +135,7 @@ class ResettingController extends Controller
             return $response;
         }
 
-        return $this->render('swdtUserBundle:Resetting:reset.html.twig', array(
+        return $this->render('amUserBundle:Resetting:reset.html.twig', array(
             'token' => $token,
             'form' => $form->createView(),
         ));

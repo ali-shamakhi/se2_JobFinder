@@ -5,19 +5,19 @@
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
     <route id="fos_user_profile_show_karfarma" path="/karfarma" methods="GET">
-        <default key="_controller">swdtUserBundle:Profile_karfarma:show</default>
+        <default key="_controller">amUserBundle:Profile_karfarma:show</default>
     </route>
 
     <route id="fos_user_profile_edit_karfarma" path="karfarma/edit" methods="GET POST">
-        <default key="_controller">swdtUserBundle:Profile_karfarma:edit</default>
+        <default key="_controller">amUserBundle:Profile_karfarma:edit</default>
     </route>
 
     <route id="fos_user_profile_show_karjoo" path="/karjoo" methods="GET">
-        <default key="_controller">swdtUserBundle:Profile_karjoo:show</default>
+        <default key="_controller">amUserBundle:Profile_karjoo:show</default>
     </route>
 
     <route id="fos_user_profile_edit_karjoo" path="karjoo/edit" methods="GET POST">
-        <default key="_controller">swdtUserBundle:Profile_karjoo:edit</default>
+        <default key="_controller">amUserBundle:Profile_karjoo:edit</default>
     </route>
 
 </routes>

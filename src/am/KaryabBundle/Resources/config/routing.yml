@@ -1,0 +1,57 @@
+am_karyab_homepage:
+    path:     /
+    defaults: { _controller: amKaryabBundle:Default:index }
+
+#am_karyab_about:
+#    path:     /about
+#    defaults: { _controller: amKaryabBundle:pages:about }
+
+am_karyab_contact_us:
+    path:     /contactUs
+    defaults: { _controller: amKaryabBundle:pages:contactUs }
+
+am_karyab_dashboard:
+    path:     /dashboard
+    defaults: { _controller: amUserBundle:pages:index }
+
+am_karyab_published_advertises_for_karjoo:
+    path:     /published_advertises
+    defaults: { _controller: amKaryabBundle:advertises:published }
+
+am_karyab_relevant_advertises_for_karjoo:
+    path:     /panel/karjoo/relevant_advertises
+    defaults: { _controller: amKaryabBundle:advertises:relevant }
+
+am_karyab_advertise_new:
+    path:     /panel/karfarma/advertise/new
+    defaults: { _controller: amKaryabBundle:advertises:new }
+
+am_karyab_advertise_edit:
+    path:     /panel/karfarma/advertise/edit/{id}
+    defaults: { _controller: amKaryabBundle:advertises:edit }
+
+am_karyab_advertise_delete:
+    path:     /panel/karfarma/advertise/delete/{id}
+    defaults: { _controller: amKaryabBundle:advertises:delete }
+
+am_karyab_advertise_disable:
+    path:     /panel/karfarma/advertise/disable/{id}
+    defaults: { _controller: amKaryabBundle:advertises:disable }
+
+am_karyab_advertise_enable:
+    path:     /panel/karfarma/advertise/enable/{id}
+    defaults: { _controller: amKaryabBundle:advertises:enable }
+
+karyab_karfarma_advertise_index:
+    path:     /panel/karfarma/advertise
+    defaults: { _controller: amKaryabBundle:advertises:listKarfarama }
+
+mz_ajax_advertise_request:
+    path:     /panel/karjoo/sendRequest
+    defaults: { _controller: amKaryabBundle:ajax:sendRequest }
+    methods: [POST]
+
+mz_ajax_search_tags:
+    path:     /ajax/tags
+    defaults: { _controller: amKaryabBundle:ajax:searchTags }
+    methods: [POST]

@@ -1,0 +1,71 @@
+am\UserBundle\Entity\Karfarma:
+    type: entity
+    table: se_karfarma_extra
+    repositoryClass: am\UserBundle\Repository\KarfarmaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+
+        companyName:
+            type: string
+            length: '100'
+            nullable: true
+            column: company_name
+
+        companyEmail:
+            type: string
+            length: '100'
+            nullable: true
+            column: company_email
+
+        companyField:
+            type: string
+            length: '100'
+            nullable: true
+            column: company_field
+
+        telephone:
+            type: string
+            length: '12'
+            nullable: true
+        address:
+            type: string
+            length: 255
+            nullable: true
+
+        avatar:
+            type: string
+            length: 255
+            nullable: true
+
+        about:
+            type: text
+            nullable: true
+
+        nationalId:
+            type: string
+            length: '10'
+            nullable: true
+            unique: true
+            column: national_id
+
+        aboutPic:
+            type: string
+            length: 255
+            nullable: true
+        website:
+            type: string
+            nullable: true
+    oneToOne:
+        user:
+          targetEntity: am\UserBundle\Entity\User
+          inversedBy: karfarma
+          joinColumn:
+            name: user_id
+            referencedColumnName: id
+
+    lifecycleCallbacks: {  }

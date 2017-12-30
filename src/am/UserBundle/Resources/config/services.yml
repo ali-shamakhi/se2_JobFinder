@@ -1,0 +1,5 @@
+services:
+    mz.security.authentication_handler:
+            class: am\UserBundle\Controller\AuthenticatingHandler
+            public: false
+

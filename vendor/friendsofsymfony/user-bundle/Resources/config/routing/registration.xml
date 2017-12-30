@@ -5,23 +5,23 @@
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
     <route id="fos_user_registration_register_karfarma" path="/karfarma" methods="GET POST">
-        <default key="_controller">swdtUserBundle:Registration_karfarma:register_karfarma</default>
+        <default key="_controller">amUserBundle:Registration_karfarma:register_karfarma</default>
     </route>
 
     <route id="fos_user_registration_register_karjoo" path="/karjoo" methods="GET POST">
-        <default key="_controller">swdtUserBundle:Registration_karjoo:register_karjoo</default>
+        <default key="_controller">amUserBundle:Registration_karjoo:register_karjoo</default>
     </route>
 
     <route id="fos_user_registration_check_email" path="/check-email" methods="GET">
-        <default key="_controller">swdtUserBundle:Registration_karfarma:checkEmail</default>
+        <default key="_controller">amUserBundle:Registration_karfarma:checkEmail</default>
     </route>
 
     <route id="fos_user_registration_confirm" path="/confirm/{token}" methods="GET">
-        <default key="_controller">swdtUserBundle:Registration_karjoo:confirm</default>
+        <default key="_controller">amUserBundle:Registration_karjoo:confirm</default>
     </route>
 
     <route id="fos_user_registration_confirmed" path="/confirmed" methods="GET">
-        <default key="_controller">swdtUserBundle:Registration_karjoo:confirmed</default>
+        <default key="_controller">amUserBundle:Registration_karjoo:confirmed</default>
     </route>
 
 </routes>

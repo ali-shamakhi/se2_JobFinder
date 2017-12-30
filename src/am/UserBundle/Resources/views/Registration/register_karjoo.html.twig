@@ -1,0 +1,231 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "@amUser/layout.html.twig" %}
+{% block user_content %}
+    <script src='https://www.google.com/recaptcha/api.js?hl=fa'></script>
+    <script src="{{ asset('am_template/js/flowtype.js') }}"></script>
+    <div class="container-fluid register-karjoo-parent">
+        <div class="row">
+            <div class="col-md-1 col-lg-2"></div>
+            <div class="container-fluid col-md-10 col-lg-8 register-karjoo">
+                <h1 style="text-align: center;margin-bottom: 45px">عضویت در سامانه دانشکار به عنوان کارجو</h1>
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register_karjoo')}) }}
+                {% if form.vars.errors %}
+                    <div class="errorBox">{{ form_errors(form) }}</div>
+                {% endif %}
+                <div class="row">
+                    <div class="col-sm-6 exception-sm">
+                        <div class="col-sm-12">
+                            <h3>اطلاعات شخصی</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="first_name" class="title-label">*نام</label>
+                            {{ form_widget(form.fName,{attr: {'class':'form-control'}}) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="last_name" class="title-label">*نام خانوادگی</label>
+                            {{ form_widget(form.lName,{attr: {'class':'form-control'}}) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label class="title-label">جنسیت</label><br>
+                            {{ form_widget(form.gender) }}
+                            {{ form_errors(form.gender) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="phone" class="title-label">*شماره تماس </label>
+                            {{ form_widget(form.mobile,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.mobile) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="phone" class="title-label">سال تولد</label>
+                            {{ form_widget(form.birth_year,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.birth_year) }}
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="mail" class="title-label">*پست الکترونیک </label>
+                            {{ form_widget(form.email,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                        <div class="col-sm-12 col-karjoo-sm">
+                            <h3>شرایط و ضوابط سامانه دانشکار</h3>
+                        </div>
+                        <div class="col-sm-12 col-karjoo-sm">
+                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">در حال حاضر شرایط خاصی تعریف نشده</textarea>
+                        </div>
+                        <div class="col-sm-12 col-karjoo-sm" style="direction: ltr;text-align: right">
+                            <div class="checkbox">
+                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه دانشکار را به طور کامل مطالعه کرده و قبول دارم</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 exception-sm">
+                        <div class="col-sm-12">
+                            <h3>اطلاعات حساب</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="user_name" class="title-label">*شناسه کاربری</label>
+                            {{ form_widget(form.username,{attr: {'class':'form-control'}}) }}
+                            {{ form_errors(form.username) }}
+                        </div>
+                        {% for f in form.plainPassword %}
+                            <div class="col-sm-12">
+                                <label for="username" class="title-label">*{{ form_label(f) }}</label>
+                                {{ form_widget(f,{attr: {'class': 'form-control'}}) }}
+                                {{ form_errors(f) }}
+                            </div>
+                        {% endfor %}
+
+                        <div class="col-sm-12 col-karjoo-xs">
+                            <h3>شرایط و ضوابط سامانه دانشکار</h3>
+                        </div>
+                        <div class="col-sm-12 col-karjoo-xs">
+                            <textarea style="resize: none;overflow: auto" class="form-control" rows="4" disabled id="#">
+شرایط دانشکار شرایط اینه شرایطططططططططط                            </textarea>
+                        </div>
+                        <div class="col-sm-12 col-karjoo-xs" style="direction: ltr;text-align: right">
+                            <div class="checkbox">
+                                <label style="color: white"><input id="condition" type="checkbox">شرایط و ضوابط سامانه دانشکار را به طور کامل مطالعه کرده و قبول دارم</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <label class="title-label">سوال امنیتی</label>
+                            <div class="g-recaptcha" data-sitekey="6LcxKwkUAAAAALKxy9mDPS9D1wZXJAh_8P9yGHJs" data-theme="clean"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin: 40px 0">
+                    <div class="col-sm-12" style="text-align: center">
+                        <button id="checkedButton" disabled type="submit" style="padding-left:50px;padding-right:50px;" class="btn btn-success">ثبت نام</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+            <div class="col-md-1 col-lg-2"></div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var temp = 0;
+            $("select[name='am_user_registration[gender]']").change(function () {
+                var selectValue = $("select[name='am_user_registration[gender]']").val();
+                if (selectValue == "1") {
+                    $(".register-karjoo .soldier").css("display", "block");
+                }
+                if (selectValue == "2") {
+                    $(".register-karjoo .soldier").css("display", "none");
+                }
+            });
+            $('#am_user_registration_karjoo_is_student').change(function () {
+                var selectValue = $("select[name='am_user_registration[karjoo][is_student]']").val();
+                if (selectValue == "0") {
+                    temp = 0;
+                    $(".register-karjoo #student_id").css("display", "none");
+                    $(".register-karjoo #current_field").css("display", "none");
+                    $(".register-karjoo #current_university").css("display", "none");
+                }
+                if (selectValue == "1") {
+                    temp = 1;
+                    $(".register-karjoo #student_id").css("display", "block");
+                    $(".register-karjoo #current_field").css("display", "block");
+                    $(".register-karjoo #current_university").css("display", "block");
+                }
+            });
+            $('#am_user_registration_karjoo_grade').change(function () {
+                var selectValue = $("select[name='am_user_registration[karjoo][grade]']").val();
+                if (selectValue == "1") {
+                    if (temp == "0"){
+                        $(".register-karjoo #phd_univesity").css("display", "block");
+                        $(".register-karjoo #phd_field").css("display", "block");
+                    }
+                    $(".register-karjoo #fogh_licanse_univesity").css("display", "block");
+                    $(".register-karjoo #fogh_licanse_field").css("display", "block");
+                    $(".register-karjoo #licanse_univesity").css("display", "block");
+                    $(".register-karjoo #licanse_field").css("display", "block");
+                }
+                if (selectValue == "2") {
+                    $(".register-karjoo #fogh_licanse_univesity").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_field").css("display", "none");
+                    if (temp == "0"){
+                        $(".register-karjoo #fogh_licanse_univesity").css("display", "block");
+                        $(".register-karjoo #fogh_licanse_field").css("display", "block");
+                    }
+                    $(".register-karjoo #licanse_univesity").css("display", "block");
+                    $(".register-karjoo #licanse_field").css("display", "block");
+                    $(".register-karjoo #phd_univesity").css("display", "none");
+                    $(".register-karjoo #phd_field").css("display", "none");
+                }
+                if (selectValue == "3") {
+                    $(".register-karjoo #licanse_univesity").css("display", "none");
+                    $(".register-karjoo #licanse_field").css("display", "none");
+                    if (temp == "0"){
+                        $(".register-karjoo #licanse_univesity").css("display", "block");
+                        $(".register-karjoo #licanse_field").css("display", "block");
+                    }
+                    $(".register-karjoo #phd_univesity").css("display", "none");
+                    $(".register-karjoo #phd_field").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_univesity").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_field").css("display", "none");
+                }
+                if (selectValue == "4") {
+                    $(".register-karjoo #licanse_univesity").css("display", "none");
+                    $(".register-karjoo #licanse_field").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_univesity").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_field").css("display", "none");
+                    $(".register-karjoo #phd_univesity").css("display", "none");
+                    $(".register-karjoo #phd_field").css("display", "none");
+                }
+                if (selectValue == "5") {
+                    $(".register-karjoo #licanse_univesity").css("display", "none");
+                    $(".register-karjoo #licanse_field").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_univesity").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_field").css("display", "none");
+                    $(".register-karjoo #phd_univesity").css("display", "none");
+                    $(".register-karjoo #phd_field").css("display", "none");
+                }
+                if (selectValue == "6") {
+                    $(".register-karjoo #licanse_univesity").css("display", "none");
+                    $(".register-karjoo #licanse_field").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_univesity").css("display", "none");
+                    $(".register-karjoo #fogh_licanse_field").css("display", "none");
+                    $(".register-karjoo #phd_univesity").css("display", "none");
+                    $(".register-karjoo #phd_field").css("display", "none");
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var temp = $("#checkedButton");
+            $("#condition").change(function () {
+                if($(this).prop("checked") == true){
+                    temp.removeAttr("disabled");
+                }
+                else if($(this).prop("checked") == false){
+                    temp.attr("disabled","disabled");
+                }
+            });
+        });
+    </script>
+    <script>
+        $('body').flowtype({
+            minimum   : 310,
+            maximum   : 3900,
+            minFont   : 12,
+            maxFont   : 30,
+            fontRatio : 100
+        });
+        $('h1').flowtype({
+            minimum   : 310,
+            maximum   : 3900,
+            minFont   : 14,
+            maxFont   : 50,
+            fontRatio : 19
+        });
+        $('h3').flowtype({
+            minimum   : 310,
+            maximum   : 3900,
+            minFont   : 10,
+            maxFont   : 45,
+            fontRatio : 23
+        });
+    </script>
+{% endblock user_content %}

@@ -1,0 +1,214 @@
+{#{% extends "@amUser/layoutKarjoo.html.twig" %}#}
+{% extends '@amUser/layout.html.twig' %}
+
+{% block user_content %}
+    <div class="container-fluid profile-karjoo-parent">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="container-fluid col-md-10 profile-karjoo">
+                {{ form_start(form, { 'action': path('fos_user_profile_edit_karjoo') }) }}
+                <div class="row">
+                    {% if form.vars.errors %}
+                        <div class="errorBox">{{ form_errors(form) }}</div>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-6">
+                        <div class="col-md-12">
+                            <div style="margin-bottom: 0" class="form-group">
+                                <div>
+                                    <label for="uploadFile">عکس پروفایل</label><br>
+                                    <div class="col-xs-6"></div>
+                                    <div class="col-xs-6">
+                                        <img src="{{ app.user.karjoo.avatarWeb }}" style="background-color:#fff;border-radius:5px;border:1px solid;margin-bottom:5px;width: 100px;height: 100px" /><br>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div style="margin: 20px -5px 0 -5px;" class="row upload-img-xs">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 right-sm">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="form-group">
+                                <label style="padding-right: 5px" for="uploadFile">آواتار شخصی</label><br>
+                                <div class="col-xs-4">
+                                    <div style="width: 100%;" class="fileUpload btn btn-primary">
+                                        <span>انتخاب عکس</span>
+                                        {{ form_widget(form.karjoo.file,{attr: {'class': 'upload'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-8">
+                                    <span id="uploadFile" class="form-control" style="width:100%;display:inline-block;white-space: nowrap;overflow: hidden;direction: ltr;text-overflow: ellipsis;" placeholder="نام فایل" disabled="disabled" >نام فایل</span>
+                                </div>
+                                {{ form_errors(form.karjoo.file) }}
+                                {% if app.user.karjoo.avatar is not null %}
+                                    <label  class="radio-inline">
+                                        حذف آواتار؟
+                                        <input type="checkbox" value="1" name="deleteAvatar">
+                                    </label>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12" style="margin-bottom: 10px">
+                            <div class="form-group">
+                                <label style="padding-right: 5px" for="uploadFile">رزومه</label><br>
+                                {% if app.user.karjoo.resume is not null %}
+                                    <a href="{{ app.user.karjoo.resumeWeb }}">رزومه کنونی</a><br>
+                                {% endif %}
+                                <div class="col-xs-4">
+                                    <div style="width: 100%;" class="fileUpload btn btn-primary">
+                                        <span>انتخاب رزومه</span>
+                                        {{ form_widget(form.karjoo.resumeFile,{attr: {'class': 'upload'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-8">
+                                    <span id="uploadFile2" class="form-control" style="width:100%;display:inline-block;white-space: nowrap;
+    overflow: hidden;direction: ltr;text-overflow: ellipsis;" placeholder="نام فایل" disabled="disabled" >نام فایل</span>
+                                </div>
+                                {{ form_errors(form.karjoo.resumeFile) }}
+
+                                {% if app.user.karjoo.resume is not null %}
+                                    <label class="radio-inline">
+                                        حذف رزومه؟
+                                        <input type="checkbox" value="1" name="deleteResume">
+                                    </label>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xs-12" style="direction: rtl">
+                            <label style="color: white;font-family: IRANSansWeb_Light, monospace;padding-right: 5px">مهارت ها</label>
+                            <div class="experience">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-12 select-skill">
+                                            <div class="form-group">
+                                                <select class="selectpicker" data-live-search="true" data-width="100%" id="mz_skillTag">
+                                                    {% for t in tags %}<option value='{{ t.id }}'>{{ t.name }}</option>{% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label style="color: white;font-family: IRANSansWeb_Light, monospace;padding-right: 5px">سطح مهارت</label><br>
+                                        <div class="col-xs-4">
+                                            <span style="width: 100%" class="btn btn-primary" onclick="addexp()">افزودن</span>
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="form-group">
+                                                <select class="form-control" id="mz_skillLevel">
+                                                    <option value="1">ضعیف</option>
+                                                    <option value="2">متوسط</option>
+                                                    <option value="3">خوب</option>
+                                                    <option value="4">خیلی خوب</option>
+                                                    <option value="5">عالی</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid skill-tag" style="padding-right: 5px;padding-left: 5px">
+                                    {% for s in form.skills %}
+                                        <div class="exp_{{ s.vars.value.tag.id }} inline-skill-tag">
+                                            <label class="tag_of_skill">
+                                                <span>{{ s.vars.value.tag.name }}</span>
+                                                {% if s.vars.value.level>0 %}
+                                                    {% for k in 1..s.vars.value.level %}
+                                                        <i class="fa fa-star fa-fw"></i>
+                                                    {% endfor %}{% endif %}
+                                                <i class="fa fa-window-close fa-fw" onclick="delexp({{ s.vars.value.tag.id }})"></i>
+                                            </label>
+                                            <input type="hidden" class="preSkills" value="{{ s.vars.value.tag.id }}" name="user_profile_karjoo[skills][{{ s.vars.value.tag.id }}][tag]" id="user_profile_karjoo_skills{{ s.vars.value.tag.id }}">
+                                            <input type="hidden" value="{{ s.vars.value.level }}" name="user_profile_karjoo[skills][{{ s.vars.value.tag.id }}][level]">
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {{ form_errors(form.skills) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6 right-sm">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="about">نمونه کار و سوابق کاری</label>
+                                {{ form_widget(form.karjoo.about,{attr: {'class':'form-control'}}) }}
+                                {{ form_errors(form.karjoo.about) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;margin: 40px 0">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-success">ذخیره تغییرات</button>
+                        <input type="hidden" name="user_profile_karjoo[_token]" value="{{ form._token.vars.value }}">
+                    </div>
+                </div>
+                {{ form_end(form,{'render_rest': false}) }}
+            </div>
+        </div>
+    </div>
+    <script>
+        /*
+            report bugs: mohammad.zamanzadeh@gmail.com|mahdi_brand@gmail.com
+         */
+        var exp = {};
+
+        $(".preSkills").each(function () {
+            exp[$(this).val()]=true;
+        });
+
+        function addexp() {
+            level = $("#mz_skillLevel").val();
+            tagId=$("#mz_skillTag").val();
+            tagName=$("#mz_skillTag option:selected").text();
+            if(tagId in exp)
+                return alert("این تگ را قبلا اضافه کرده اید!");
+
+            exp[tagId] = true;
+
+            var stars="";
+            for(i=0;i<level;i++)stars+="<i class='fa fa-star fa-fw'></i>";
+            $(".experience .skill-tag").append("<div class='exp_"+tagId+" inline-skill-tag' class=\"expbox\"><label class='tag_of_skill'><span>"+tagName+"</span>"+stars+"<i class='fa fa-window-close fa-fw' onclick='delexp("+tagId+")'></i></label><input type='hidden' value='"+tagId+"' name='user_profile_karjoo[skills]["+tagId+"][tag]' id='user_profile_karjoo_skills_"+tagId+"'><input type='hidden' value='"+level+"' name='user_profile_karjoo[skills]["+tagId+"][level]' id='user_profile_karjoo_level_"+tagId+"'><div class='clear-fix'></div>");
+
+        }
+
+        function delexp(tag_id) {
+            delete exp[tag_id];
+            $('.exp_'+tag_id).remove();
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#user_profile_karjoo_karjoo_coOperation').addClass('selectpicker');
+            var radioValue = $("input[name='user_profile_karjoo[gender]']:checked").val();
+            if (radioValue == "2") {
+                $("#soldiering").css("display", "none");
+            }
+            $("input[name='user_profile_karjoo[gender]']").change(function () {
+                if (radioValue == "1") {
+                    $("#soldiering").css("display", "block");
+                }
+                if (radioValue == "2") {
+                    $("#soldiering").css("display", "none");
+                }
+            });
+        });
+    </script>
+
+    {#pak nashe lotfan !!!!#}
+    <script type="text/javascript">
+    $(function() {
+    $("input:file").change(function (){
+        if ($(this)[0].id == "user_profile_karjoo_karjoo_file")
+            $("#uploadFile").html($(this).val());
+        else if ($(this)[0].id == "user_profile_karjoo_karjoo_resumeFile")
+            $("#uploadFile2").html($(this).val());
+    });
+    });
+    </script>
+
+{% endblock user_content %}

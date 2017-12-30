@@ -1,5 +1,0 @@
-services:
-    mz.security.authentication_handler:
-            class: swdt\UserBundle\Controller\AuthenticatingHandler
-            public: false
-

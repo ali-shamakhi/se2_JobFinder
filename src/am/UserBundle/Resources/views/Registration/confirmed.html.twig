@@ -1,0 +1,12 @@
+{% extends "@amUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block user_content %}
+
+<link rel="stylesheet" type="text/css" href="{{ asset('am_template/css1.css') }}">
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    {% if targetUrl %}
+    <p><a href="{{ path('am_karyab_dashboard') }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+{% endblock user_content %}

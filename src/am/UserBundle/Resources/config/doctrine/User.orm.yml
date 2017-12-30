@@ -1,0 +1,56 @@
+am\UserBundle\Entity\User:
+    type: entity
+    table: se_users
+    repositoryClass: am\UserBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        fName:
+            type: string
+            length: '50'
+
+        lName:
+            type: string
+            length: '50'
+
+        gender:
+            type: smallint
+            nullable: true
+
+        birthYear:
+            type: integer
+            nullable: true
+
+        mobile:
+            type: string
+            length: '12'
+            unique: false
+
+    oneToMany:
+        skills:
+          targetEntity: am\KaryabBundle\Entity\UserSkill
+          mappedBy: user
+          cascade: [persist]
+        advertises:
+          targetEntity: am\KaryabBundle\Entity\Advertise
+          mappedBy: user
+        jobRequests:
+          targetEntity: am\KaryabBundle\Entity\jobRequest
+          mappedBy: user
+    oneToOne:
+        karjoo:
+          targetEntity: am\UserBundle\Entity\Karjoo
+          mappedBy: user
+          cascade: [persist]
+        karfarma:
+          targetEntity: am\UserBundle\Entity\Karfarma
+          mappedBy: user
+          cascade: [persist]
+
+    lifecycleCallbacks: {}
+
+

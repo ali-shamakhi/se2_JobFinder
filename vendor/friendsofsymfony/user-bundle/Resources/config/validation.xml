@@ -192,7 +192,7 @@
         </property>
     </class>
 
-    <class name="swdt\UserBundle\Entity\User">
+    <class name="am\UserBundle\Entity\User">
 
         <property name="fName">
 
@@ -270,7 +270,7 @@
 
     </class>
 
-    <class name="swdt\UserBundle\Entity\Karjoo">
+    <class name="am\UserBundle\Entity\Karjoo">
 
 
         <property name="file">
@@ -307,7 +307,7 @@
 
     </class>
 
-    <class name="swdt\UserBundle\Entity\Karfarma">
+    <class name="am\UserBundle\Entity\Karfarma">
 
         <!--<constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">-->
             <!--<option name="fields">nationalId</option>-->
@@ -417,7 +417,7 @@
         </property>
     </class>
 
-    <class name="swdt\KaryabBundle\Entity\UserSkill">
+    <class name="am\KaryabBundle\Entity\UserSkill">
 
         <property name="level">
             <constraint name="Range">

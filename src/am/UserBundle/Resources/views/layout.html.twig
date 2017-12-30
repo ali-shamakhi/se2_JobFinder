@@ -1,0 +1,20 @@
+{% extends '@amKaryab/base.html.twig' %}
+
+
+{% block karyabContent %}
+
+    {% if app.request.hasPreviousSession %}
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+{% block sidebar %}
+    {% endblock %}
+{% block user_content %}
+{% endblock user_content %}
+{% endblock %}
+

@@ -1,0 +1,23 @@
+am\KaryabBundle\Entity\SkillTag:
+    type: entity
+    table: se_skill_tags
+    repositoryClass: am\KaryabBundle\Repository\SkillTagRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    oneToMany:
+        skills:
+          targetEntity: am\KaryabBundle\Entity\UserSkill
+          mappedBy: tag
+    manyToMany:
+        advertises:
+          targetEntity: am\KaryabBundle\Entity\Advertise
+          mappedBy: skillTags
+    lifecycleCallbacks: {  }

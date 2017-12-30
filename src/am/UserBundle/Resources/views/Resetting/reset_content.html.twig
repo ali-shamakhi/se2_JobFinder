@@ -1,0 +1,20 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<link rel="stylesheet" type="text/css" href="{{ asset('am_template/css1.css') }}">
+<div class="container-fluid reset-parent">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="container-fluid col-sm-6 reset">
+            {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+            {% for f in form.plainPassword.children %}
+                {{ form_label(f) }}
+                {{ form_widget(f,{attr: {'class':'form-control'}}) }}
+            {% endfor %}
+            <div>
+                <input type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
+            </div>
+            {{ form_end(form) }}
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>

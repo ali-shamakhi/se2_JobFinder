@@ -1,0 +1,8 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+am_karyab_profile_karjoo:
+    path:     /karjoo/{id}-{rId}
+    defaults: { _controller: amUserBundle:Profile_karjoo:showProfile }
+am_karyab_profile_karfarma:
+    path:     /company/{id}-{name}
+    defaults: { _controller: amUserBundle:Profile_karfarma:showProfile }
