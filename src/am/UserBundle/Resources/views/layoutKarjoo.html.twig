@@ -1,67 +1,22 @@
 {% extends '@amUser/layout.html.twig' %}
 {% block sidebar %}
 
-    <div class="container-fluid panel-menu panel-menu-tablet">
-        <div class="row">
-            <div class="col-xs-2">
-                <a href="{{ path('fos_user_change_password') }}">
-                    <div style="background-color: #EDE574">
-                        <i class="fa fa-pencil-square-o center-icon-cycle" aria-hidden="true"></i>
-                        <span>اطلاعات کاربری</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-4">
-                <a href="{{ path('am_karyab_relevant_advertises_for_karjoo') }}">
-                    <div style="background-color: #C7F464">
-                        <i class="fa fa-handshake-o center-icon-cycle" aria-hidden="true"></i>
-                        <span>فرصت های شغلی</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-4">
-                <a href="{{ path('fos_user_profile_edit_karjoo') }}">
-                    <div style="background-color: #FF6B6B">
-                        <i class="fa fa-address-book-o center-icon-cycle" aria-hidden="true"></i>
-                        <span>پروفایل</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-2">
-                <a href="{{ path('fos_user_security_logout') }}">
-                    <div style="background-color: #E1F5C4">
-                        <i class="fa fa-power-off center-icon-cycle" aria-hidden="true"></i>
-                        <span>خروج</span>
-                    </div>
-                </a>
-            </div>
-        </div>
+    <div class="my_sidebar_sm">
+        <ul>
+            <li><a href="{{ path('fos_user_change_password') }}"><i class="fa fa-inbox fa-2x fa-fw" style="line-height: 1.25;"></i><div>اطلاعات کاربری</div></a></li>
+            <li><a href="{{ path('am_karyab_relevant_advertises_for_karjoo') }}"><i class="fa fa-info fa-2x fa-fw" style="line-height: 1.25;"></i><div>فرصت های شغلی</div></a></li>
+            <li><a href="{{ path('fos_user_profile_edit_karjoo') }}"><i class="fa fa-user fa-2x fa-fw" style="line-height: 1.25;"></i><div>پروفایل</div></a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-power-off fa-2x fa-fw" style="line-height: 1.25;"></i><div>خروج</div></a></li>
+        </ul>
     </div>
-    <div class="container-fluid panel_menu panel_menu_desktop">
-        <a class="exception-link" href="{{ path('am_karyab_relevant_advertises_for_karjoo') }}">
-            <div class="container-fluid" style="background-color: #C7F464">
-                <i class="fa fa-handshake-o center-icon-cycle" aria-hidden="true"></i>
-                <span class="span_content">فرصت های شغلی</span>
-            </div>
-        </a>
-        <a class="exception-link" href="{{ path('fos_user_profile_edit_karjoo') }}">
-            <div class="container-fluid" style="background-color: #FF6B6B">
-                <i class="fa fa-address-book-o center-icon-cycle" aria-hidden="true"></i>
-                <span class="span_content">پروفایل</span>
-            </div>
-        </a>
-        <a class="exception-link" href="{{ path('fos_user_change_password') }}">
-            <div class="container-fluid" style="background-color: #EDE574">
-                <i class="fa fa-pencil-square-o center-icon-cycle" aria-hidden="true"></i>
-                <span class="span_content">اطلاعات کاربری</span>
-            </div>
-        </a>
-        <a class="exception-link" href="{{ path('fos_user_security_logout') }}">
-            <div class="container-fluid" style="background-color: #E1F5C4">
-                <i class="fa fa-power-off center-icon-cycle" aria-hidden="true"></i>
-                <span class="span_content">خروج</span>
-            </div>
-        </a>
+    <div class="my_sidebar_lg">
+        <ul>
+            <li><a href="{{ path('fos_user_change_password') }}"><i class="fa fa-inbox fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">اطلاعات کاربری</div></a></li>
+            <li><a href="{{ path('am_karyab_relevant_advertises_for_karjoo') }}"><i class="fa fa-info fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">فرصت های شغلی</div></a></li>
+            <li><a href="{{ path('fos_user_profile_edit_karjoo') }}"><i class="fa fa-user fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">پروفایل</div></a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-power-off fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">خروج</div></a></li>
+        </ul>
     </div>
+
 
 {% endblock %}

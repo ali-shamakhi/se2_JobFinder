@@ -70,62 +70,17 @@
     </div>
 </nav>
 <div class="container-fluid" style="font-family:yekan;text-align:right;padding:10px;padding-right:25px;padding-left:25px" id="bor">
-    <div style="float:left">23:22:12 | دوشنبه 24 دی 1395</div>
-    <div>مهدی فاطمیان عزیز خوش آمدید</div>
-</div>
-<div class="my_sidebar_sm">
-    <ul>
-        <li><a href="#"><i class="fa fa-inbox fa-2x fa-fw" style="line-height: 1.25;"></i><div>فرصت های شغلی</div></a></li>
-        <li><a href="#"><i class="fa fa-info fa-2x fa-fw" style="line-height: 1.25;"></i><div>تغییر اطلاعات کاری</div></a></li>
-        <li><a href="#"><i class="fa fa-user fa-2x fa-fw" style="line-height: 1.25;"></i><div>تغییر اطلاعات کاربری</div></a></li>
-        <li><a href="#"><i class="fa fa-power-off fa-2x fa-fw" style="line-height: 1.25;"></i><div>خروج</div></a></li>
-    </ul>
-</div>
-<div class="my_sidebar_lg">
-    <ul>
-        <li><a href="#"><i class="fa fa-inbox fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">فرصت های شغلی</div></a></li>
-        <li><a href="#"><i class="fa fa-info fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">تغییر اطلاعات کاری</div></a></li>
-        <li><a href="#"><i class="fa fa-user fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">تغییر اطلاعات کاربری</div></a></li>
-        <li><a href="#"><i class="fa fa-power-off fa-3x fa-fw" style="line-height: 2;width: 100%"></i><div style="margin-top:-15px;">خروج</div></a></li>
-    </ul>
+    <div style="float:left">امروز: {{ date('now')|jdate() }}</div>
+    <div>{{ app.user.fName }} عزیز خوش آمدید</div>
 </div>
 
 
 
 
-
-<div class="advertisement">
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-            <label id="my_button1" class="btn btn-info" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" onclick=toggle1()>مشاهده آگهی ...</label>
-            <div class="my_title">
-                <span>عنوان آگهی : طراح وب</span>
-                <span style="vertical-align: top">شرکت : فرادیس البرز</span>
-            </div>
-            <div class="clear_fix"></div>
-            <div id="collapse1" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div><span class="first">شرح شغل و آگهی ارسالی : </span><span>مسلط به C#,HTML,CSS</span></div>
-                    <div><span class="first">سایر مهارت ها : </span><span>---</span></div>
-                    <div><span class="first">میزان تحصیلات : </span><span>لیسانس</span></div>
-                    <div><span class="first">جنسیت : </span><span>مذکر</span></div>
-                    <div><span class="first">وضعیت استخدامی : </span><span>پاره وقت</span></div>
-                    <div><span class="first">وضعیت سربازی : </span><span>معافیت تحصیلی</span></div>
-                    <div>
-                        <label class="btn btn-success btn-file" style="width: 12%;min-width: 93px;float: left;padding: 1px 12px;">
-                            ارسال رزومه ... <input type="file" style="display: none;">
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <label id="my_button2" class="btn btn-info" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" onclick=toggle2()>مشاهده آگهی ...</label>
-            {% block karyabContent %}{% endblock %}
-
-        </div>
-    </div>
-</div>
+{% block sidebar %}
+{% endblock %}
+{% block karyabContent %}
+{% endblock %}
 
 
 <div class="container-fluid my_footer">

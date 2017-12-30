@@ -32,14 +32,6 @@ class ChangePasswordExtraFormType_karjoo extends AbstractType
                 )
 
             ))
-            ->add('student_id','text',array(
-                'label' => 'شماره دانشجویی',
-                'max_length' => 12,
-                'required' => false,
-                'attr' => array(
-                    'placeholder' => '',
-                )
-            ))
         ;
 
     }
