@@ -17,24 +17,12 @@ am\KaryabBundle\Entity\Advertise:
             type: text
             nullable: true
 
-        grade:
-            type: integer
-            nullable: true
-
-        coOperation:
-            type: json_array
-            nullable: true
-
         gender:
             type: smallint
             nullable: true
 
         otherSkills:
             type: text
-            nullable: true
-
-        soldiery:
-            type: smallint
             nullable: true
 
         createdAt:

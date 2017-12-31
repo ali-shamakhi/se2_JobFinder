@@ -1085,7 +1085,7 @@ body{
     background-color: transparent;
     border: 2px solid #fff;
     border-radius: 3px;
-    color: #fff;
+    /*color: #fff;*/
 }
 .add-advertise .btn-success{
     background-color: #C7F464;
@@ -1211,7 +1211,7 @@ body{
     background-color: transparent;
     border: 2px solid #fff;
     border-radius: 3px;
-    color: #fff;
+    /*color: #fff;*/
 }
 .profile-karjoo .fileUpload {
     position: relative;
@@ -1263,7 +1263,7 @@ body{
     color: #263238;
 }
 .profile-karjoo .btn-success:active:focus,.profile-karjoo .btn-success:active:hover{
-    color: #fff;
+    /*color: #fff;*/
     background-color: #00C853;
     border-color: #00C853;
 }
@@ -1336,7 +1336,7 @@ form .error {
     background-color: transparent;
     border: 2px solid #fff;
     border-radius: 3px;
-    color: #fff;
+    /*color: #fff;*/
 }
 .change-password-karfarma select option{
     background: #fff;
@@ -1597,7 +1597,7 @@ form .error {
     background-color: transparent;
     border: 2px solid #fff;
     border-radius: 3px;
-    color: #fff;
+    /*color: #fff;*/
 }
 .register-karjoo select option{
     background: #fff;
@@ -1738,7 +1738,7 @@ form .error {
     padding: 1px 10px;
 }
 .profile-karfarma .form-control{
-    color: #fff;
+    /*color: #fff;*/
     background: transparent;
     border: 2px solid #fff;
 }
@@ -1746,7 +1746,7 @@ form .error {
     background: transparent;
 }
 .profile-karjoo .form-control{
-    color: #fff;
+    /*color: #fff;*/
     background: transparent;
     border: 2px solid #fff;
 }
@@ -1754,7 +1754,7 @@ form .error {
     background: transparent;
 }
 .add-advertise .form-control{
-    color: #fff;
+    /*color: #fff;*/
     background: transparent;
     border: 2px solid #fff;
 }
@@ -1771,26 +1771,26 @@ form .error {
 }
 .add-advertise .select-skill button{
     background: transparent;
-    color: #fff;
+    /*color: #fff;*/
     border: 2px solid #fff;
 }
 .add-advertise .select-cooperation button{
     background: transparent;
-    color: #fff;
+    /*color: #fff;*/
     border: 2px solid #fff;
 }
 .profile-karjoo .select-skill button{
     background: transparent;
-    color: #fff;
+    /*color: #fff;*/
     border: 2px solid #fff;
 }
 .profile-karjoo .select-cooperation button{
     background: transparent;
-    color: #fff;
+    /*color: #fff;*/
     border: 2px solid #fff;
 }
 .change-password-karfarma .form-control{
-    color: #fff;
+    /*color: #fff;*/
     background: transparent;
     border: 2px solid #fff;
 }
@@ -1858,7 +1858,7 @@ textarea:-ms-input-placeholder {
     border: 2px solid #333;
 }
 .register-karjoo .form-control{
-    color: #fff;
+    /*color: #fff;*/
     background: transparent;
     border: 2px solid #fff;
 }
