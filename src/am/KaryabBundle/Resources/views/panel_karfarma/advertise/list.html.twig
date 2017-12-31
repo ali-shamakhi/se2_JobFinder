@@ -110,8 +110,6 @@
                                                 <th>شماره موبایل</th>
                                                 <th>حداقل حقوق درخواستی (در ساعت)</th>
                                                 <th>سال تولد</th>
-                                                <th>جنسیت</th>
-                                                <th>وضعیت سربازی</th>
                                                 <th>رزومه</th>
                                             </tr>
                                             </thead>
@@ -122,8 +120,6 @@
                                                         <td>{{ req.user.mobile   }}</td>
                                                         <td>{{ req.minimumSalary   }} تومان</td>
                                                         <td>متولد {{ req.user.birthYear }}</td>
-                                                        <td>{{ req.user.genderText }}</td>
-                                                        <td>{{ req.user.karjoo.soldieryText }}</td>
                                                         <td><a target="_blank" class="btn btn-info" href="{{ path('am_karyab_profile_karjoo',{'id': req.user.id,'rId': req.id}) }}">پروفایل و رزومه</a></td>
                                                     </tr>
                                             {% endfor %}

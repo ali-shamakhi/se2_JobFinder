@@ -31,7 +31,7 @@ class advertisesController extends Controller
 
         $em = $this->getDoctrine();
 
-        $sql = "SELECT advertise_id as ad FROM am_advertise_tags";
+        $sql = "SELECT advertise_id as ad FROM se_advertise_tags";
         if(count($userSkills)>0)
             $sql.= " WHERE tag_id IN (".implode(',',$userSkills).")";
         else
@@ -82,7 +82,7 @@ class advertisesController extends Controller
 
         $em = $this->getDoctrine();
 
-        $sql = "SELECT user_id FROM am_users_skills WHERE user_id is not NULL";
+        $sql = "SELECT user_id FROM se_users_skills WHERE user_id is not NULL";
         if(count($userSkills)>0)
             $sql.= " AND tag_id IN (".implode(',',$userSkills).")";
         else

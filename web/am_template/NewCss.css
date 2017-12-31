@@ -518,6 +518,7 @@ body{
     font-family: IRANSansWeb,monospace;
     z-index: 40;
 }
+.container-fluid{right:80px;}
 .menu-desktop .container-fluid{
     height: 100%;
 }
@@ -891,7 +892,7 @@ body{
     position: absolute;
     top: 15%;
     left: 0;
-    right: 0;
+    right: 80px;
 }
 .advertise .col-xs-1,.advertise .col-xs-10,.advertise .col-xs-11,.advertise .col-xs-12,.advertise .col-xs-2,.advertise .col-xs-3,.advertise .col-xs-4,.advertise .col-xs-5,.advertise .col-xs-6,.advertise .col-xs-7,.advertise .col-xs-8,.advertise .col-xs-9 {
     padding-left: 5px;
@@ -1197,7 +1198,7 @@ body{
     position: absolute;
     top:15%;
     left:4%;
-    right:4%;
+    right:80px;
     padding-left: 0;
     padding-right: 0;
 }
@@ -1295,7 +1296,7 @@ form .error {
     position: absolute;
     top:15%;
     left:0;
-    right:0;
+    right:80px;
 }
 .change-password-karfarma .btn-success{
     background-color: #C7F464;

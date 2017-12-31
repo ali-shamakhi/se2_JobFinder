@@ -9,7 +9,8 @@ class pagesController extends Controller
     public function indexAction()
     {
         if($this->isGranted('ROLE_KARFARMA'))
-            return $this->render('@amUser/dashboard_Karfarma.html.twig');
-        return $this->render('@amUser/dashboard_Karjoo.html.twig');
+            return $this->redirect('/panel/karfarma/advertise');
+
+        return $this->redirect('/panel/karjoo/relevant_advertises');
     }
 }

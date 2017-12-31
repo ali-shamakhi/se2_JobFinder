@@ -53,7 +53,22 @@
         </div>
     </form>
 
+    <script>
+        $(document).on('submit','#mzForm',function (e) {
+            e.preventDefault();
+            var dataTosend = $("#mzForm").serialize();
+            console.log(dataTosend);
+            $("#error-msg").html("");
+            $.post("/login_check", dataTosend, function (res) {
+                if(res.success){
+                    location.href = "/dashboard";
+                }
+                $("#error-msg").html(res.message);
+            });
 
+            return false;
+        })
+    </script>
 {% endif %}
 
 
