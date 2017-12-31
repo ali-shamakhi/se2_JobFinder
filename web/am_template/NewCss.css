@@ -1069,7 +1069,7 @@ body{
 }
 .add-advertise .form-group label{
     font-family: IRANSansWeb_Light,monospace;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
 }
 .add-advertise .form-group textarea{
     width: 100%;
@@ -1185,7 +1185,7 @@ body{
 }
 .profile-karfarma .form-group label{
     font-family: IRANSansWeb_Light,monospace;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
 }
 @media screen and (min-width: 768px) {
     .profile-karfarma .right-sm{
@@ -1319,11 +1319,11 @@ form .error {
 }
 .change-password-karfarma .col-md-6 > label{
     font-family: IRANSansWeb_UltraLight,monospace;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
 }
 .change-password-karfarma .col-md-4 > label{
     font-family: IRANSansWeb_UltraLight,monospace;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
 }
 .change-password-karfarma > form > .row{
     direction: rtl;
