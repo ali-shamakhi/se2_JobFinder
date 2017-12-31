@@ -32,7 +32,8 @@ body{
     font-family: IRANSansWeb,monospace;
     /*background: url("img/night-dark-blur-hd-wallpapers.jpg") no-repeat fixed center;*/
     /*background-size: cover;*/
-    background-color: gray;
+    background-color: #e4e4e4;
+    direction: rtl;
 }
 @media (min-width: 1920px){
     .container {
@@ -1248,7 +1249,7 @@ body{
     direction: rtl;
 }
 .profile-karjoo .form-group label{
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_Light, monospace;
     margin-bottom: 10px;
 }
@@ -1450,7 +1451,7 @@ form .error {
 }
 .show-karjoo .col-sm-6 > div{
     padding: 5px 8px;
-    background-color: white;
+    /*background-color: white;*/
     box-shadow: 0 0 5px black;
     border-radius: 3px 0 0 3px;
     border-right: 3px solid #e53935;
@@ -1514,18 +1515,18 @@ form .error {
     direction: rtl;
 }
 .register-karfarma .col-sm-12 .title-label{
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 .register-karfarma .col-sm-12{
     margin-bottom: 15px;
 }
 .register-karfarma h1{
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 .register-karfarma h3{
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 .register-karfarma .error {
@@ -1606,18 +1607,18 @@ form .error {
     direction: rtl;
 }
 .register-karjoo .col-sm-12 .title-label{
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 .register-karjoo .col-sm-12{
     margin-bottom: 15px;
 }
 .register-karjoo h1{
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 .register-karjoo h3{
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 .register-karjoo .error {
@@ -1633,7 +1634,7 @@ form .error {
 }
 .register-karjoo #am_user_registration_soldiering label{
     margin: 0 7px;
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 @media (min-width: 768px) {
@@ -1690,7 +1691,7 @@ form .error {
 }
 .request label{
     margin-bottom: 15px;
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 /*------------------------------------------------------------------------------------------------*/
@@ -1725,13 +1726,13 @@ form .error {
 }
 .reset label{
     margin-bottom: 15px;
-    color: white;
+    /*color: white;*/
     font-family: IRANSansWeb_UltraLight,monospace;
 }
 .reset input[type="submit"]{
     background-color: #00C853;
     border: 1px solid #00C853;
-    color: white;
+    /*color: white;*/
     height: 35px;
     border-radius: 2px;
     padding: 1px 10px;
@@ -1865,7 +1866,7 @@ textarea:-ms-input-placeholder {
     background: transparent;
 }
 .register-karfarma .form-control{
-    color: #fff;
+    /*color: #fff;*/
     background: transparent;
     border: 2px solid #fff;
 }

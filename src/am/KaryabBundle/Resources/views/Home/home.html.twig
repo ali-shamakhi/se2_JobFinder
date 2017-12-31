@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-
-
-<div class="col-md-6" ><a href="{{ path('fos_user_registration_register_karfarma') }}"><div class="btn btn-info" style="width: 100%;padding: 20px;margin-top: 5px">ثبت نام کارفرما</div> </a></div>
-<div class="col-md-6"><a href="{{ path('fos_user_registration_register_karjoo') }}"><div class="btn btn-warning" style="width: 100%;padding: 20px;margin-top: 5px">ثبت نام کارجو</div></a></div>
+{% extends '@amUser/layout.html.twig' %}
+{% block karyabContent %}
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <li class="exception-menu-item"><a href="{{ path('am_karyab_dashboard') }}">
             <div>
@@ -15,14 +11,51 @@
         </a>
     </li>
 {% else %}
-    <li class="exception-menu-item">
-        <a  data-toggle="modal" data-target="#myModal">
-            <div>
-                <i class="fa fa-user" aria-hidden="true"></i>
+
+    <div class="col-md-6" style="margin-top:94px;">
+        <div class="row" >
+
+            <a class="col-md-3 col-md-offset-5" href="{{ path('fos_user_registration_register_karfarma') }}"><div class="btn btn-info" style="width: 100%;padding: 20px;margin-top: 5px">ثبت نام کارفرما</div> </a></div>
+        <div class="row"><a
+                     class="col-md-3 col-md-offset-5"
+                    href="{{ path('fos_user_registration_register_karjoo') }}"><div class="btn btn-warning" style="width: 100%;padding: 20px;margin-top: 5px">ثبت نام کارجو</div></a></div>
+    </div>
+
+    <form action="/login_check" class="col-md-6" id="mzForm" method="post">
+        <input type="hidden" name="_csrf_token" value="DMvrICXtp2G1pJBbgkgMB1ilqiKs7rQW2EeiSxdmmEE">
+        <div class="container-fluid">
+            <div class="modal-header">
+                <h4 class="modal-title">ورود به پنل کاربری</h4>
             </div>
-            <div>
-                <a href="{{ url('fos_user_security_login') }}">ورود</a>
+            <div class="modal-body">
+                <div id="error-msg" class="error">
+
+                </div>
+                <div class="form-group">
+                    <label>نام کاربری</label>
+                    <input name="_username" type="text" class="form-control" value="" required="required" placeholder="نام کاربری خود را وارد نمایید">
+                </div>
+                <div class="form-group">
+                    <label>رمز عبور</label>
+                    <input name="_password" type="password" class="form-control" required="required" placeholder="رمز عبور خود را وارد نمایید">
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on">
+                    <label for="remember_me">مرا به خاطر بسپار</label>
+                </div>
+                <a href="/resetting/request">بازیابی رمز عبور</a>
             </div>
-        </a>
-    </li>
+
+            <div class="modal-footer">
+                <button type="submit" name="_submit" class="btn btn-success">ورود به پنل کاربری</button>
+            </div>
+
+        </div>
+    </form>
+
+
 {% endif %}
+
+
+
+{% endblock %}
