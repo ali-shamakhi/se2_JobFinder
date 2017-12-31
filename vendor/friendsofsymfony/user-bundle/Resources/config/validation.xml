@@ -230,7 +230,7 @@
         <property name="mobile">
 
             <constraint name="NotBlank">
-                <option name="message">لطفا شماره تماس را وارد کنید</option>
+                <option name="message">لطفا شماره همراه را وارد کنید</option>
                 <option name="groups">
                     <value>Registration</value>
                     <value>Profile</value>

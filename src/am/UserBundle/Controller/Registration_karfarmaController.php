@@ -63,22 +63,10 @@ class Registration_karfarmaController extends Controller
         $form->handleRequest($request);
 
 
-        require_once "recaptchalib.php";
-        // your secret key
-        $secret= "6LcxKwkUAAAAAIxibcC4dNvA56ry57SZIxMbFKlA";
 
-        // empty response
-        $response= null;
 
-        // check secret key
-        $reCaptcha= new ReCaptcha($secret);
+        if ($form->isValid()) {
 
-        if ($form->isValid() && $_POST["g-recaptcha-response"]) {
-
-            $response = $reCaptcha->verifyResponse(
-                $_SERVER["REMOTE_ADDR"],
-                $_POST["g-recaptcha-response"]
-            );
 
             $user->getKarfarma()->upload();
             $user->addRole('ROLE_KARFARMA');

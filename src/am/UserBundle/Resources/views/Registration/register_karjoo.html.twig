@@ -1,7 +1,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% extends "@amUser/layout.html.twig" %}
 {% block user_content %}
-    <script src='https://www.google.com/recaptcha/api.js?hl=fa'></script>
     <script src="{{ asset('am_template/js/flowtype.js') }}"></script>
     <div class="container-fluid register-karjoo-parent">
         <div class="row">
@@ -85,10 +84,6 @@
                             <div class="checkbox">
                                 <label><input id="condition" type="checkbox">شرایط و ضوابط سامانه دانشکار را به طور کامل مطالعه کرده و قبول دارم</label>
                             </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <label class="title-label">سوال امنیتی</label>
-                            <div class="g-recaptcha" data-sitekey="6LcxKwkUAAAAALKxy9mDPS9D1wZXJAh_8P9yGHJs" data-theme="clean"></div>
                         </div>
                     </div>
                 </div>
